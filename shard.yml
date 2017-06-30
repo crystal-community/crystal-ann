@@ -1,0 +1,24 @@
+name: crystal-ann
+version: 0.1.0
+
+authors:
+  - Amber <contact@ambercr.io>
+
+crystal: 0.22.0
+
+license: MIT
+
+dependencies:
+  amber:
+    github: Amber-Crystal/amber 
+
+  quartz-mailer:
+    github: amber-crystal/quartz-mailer
+    branch: master
+  
+  granite_orm:
+    github: kemalyst/granite-orm
+    version: ~> 0.6.0
+ 
+  pg:
+    github: will/crystal-pg

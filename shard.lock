@@ -1,0 +1,42 @@
+version: 1.0
+shards:
+  amber:
+    github: Amber-Crystal/amber
+    version: 0.1.3
+
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.4.2
+
+  granite_orm:
+    github: kemalyst/granite-orm
+    version: 0.6.2
+
+  kemalyst-validators:
+    github: kemalyst/kemalyst-validators
+    version: 0.2.0
+
+  kilt:
+    github: jeromegn/kilt
+    version: 0.3.3
+
+  pg:
+    github: will/crystal-pg
+    version: 0.13.3
+
+  quartz-mailer:
+    github: amber-crystal/quartz-mailer
+    commit: 9361ae75f178cb62585aa1b6047a2269f553d2d5
+
+  radix:
+    github: luislavena/radix
+    commit: 211418416adba540b594af2260e1b5d0c8877c9e
+
+  slang:
+    github: jeromegn/slang
+    commit: b817c89c7e5ae39562710c0d6c7f42cee685e14f
+
+  smtp:
+    github: raydf/smtp.cr
+    commit: 36854c38435ce104914cb6f44e08c23d8defd143
+
