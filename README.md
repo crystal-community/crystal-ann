@@ -1,10 +1,10 @@
-# crystal-ann
+# Crystal [ANN]
 
-Your description here
+Announce your new project, blog post, version update or other Crystal resource useful for community.
 
 ## Installation
 
-Create a pg database called `demo` and configure the `config/database.yml`
+Create a pg database called `crystal_ann` and configure the `config/database.yml`
 to provide the credentials to access the table.
 
 Then:
@@ -23,12 +23,8 @@ crystal build src/crystal-ann.cr
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/your_project/fork )
+1. Fork it ( https://github.com/veelenga/crystal-ann/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
-
-## Contributors
-
-- [your_github_name](https://github.com/your_github_name) your_name - creator, maintainer

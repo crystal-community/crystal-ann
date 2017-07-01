@@ -1,2 +1,2 @@
 pg:
-  database: postgres://postgres:@pg:5432/crystal_ann
+  database: postgresql://localhost/crystal_ann

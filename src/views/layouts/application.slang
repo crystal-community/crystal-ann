@@ -1,30 +1,40 @@
 doctype html
 html
   head
-    title Crystal-ann using Amber
+    title Crystal [ANN]
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
 
-    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    link rel="stylesheet" href="/stylesheets/icon.css"
+    link rel="stylesheet" href="/stylesheets/style.css"
     link rel="stylesheet" href="/stylesheets/main.css"
 
-  body
-    div.masthead
-      div.container
-        nav.nav
-          == render_template "layouts/_nav.slang"
-    div.container
-      div.row
-      - flash.each do |key, value|
-        div class="alert alert-#{ key }"
-          p = flash[key]
-      div.row
-        div.col-sm-12.main
-          == content
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 
-    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
-    script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+  body.home
+    div#page.hfeed.site
+      div#sidebar.sidebar
+        header#masthead.site-header role="banner"
+          div.site-branding
+            h1.site-title
+              a href="/" Crystal [ANN]
+            p.site-description
+              | Announce new project, blog post, version update or any other Crystal resource.
+
+            button.secondary-toggle
+
+        div.secondary
+          div
+            == render_template "layouts/_nav.slang"
+            == render_template "layouts/_search.slang"
+            == render_template "layouts/_social_nav.slang"
+
+      div#content.site-content
+        div#primary.content-area
+          main#main.site-main role="main"
+            == content
+
+      footer#colophon.site-footer role="contentinfo"
+
     script src="/javascripts/main.js"
-
-

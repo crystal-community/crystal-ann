@@ -1,0 +1,14 @@
+nav#social-navigation.social-navigation
+  div.menu-social-links-container
+    ul#menu-social-links.menu
+      li
+        a href="https://twitter.com/crystal-ann" target="_blank"
+          i.fa.fa-twitter.fa-3x
+
+      li
+        a href="https://github.com/veelenga/crystal-ann" target="_blank"
+          i.fa.fa-github.fa-3x
+
+      li
+        a href="/rss"
+          i.fa.fa-rss.fa-3x

@@ -4,5 +4,6 @@
 /.crystal/
 /.shards/
 .env
+crystal-ann
 
 
