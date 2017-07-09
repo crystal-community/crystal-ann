@@ -7,9 +7,10 @@ class Announcement < Granite::ORM
     1 => "Project Update",
     2 => "Conference",
     3 => "Meetup",
-    4 => "Screencast",
-    5 => "Video",
-    6 => "Other",
+    4 => "Podcast",
+    5 => "Screencast",
+    6 => "Video",
+    7 => "Other",
   }
 
   adapter pg

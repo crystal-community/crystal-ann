@@ -2505,10 +2505,6 @@ p > video {
  */
 
 @media screen and (min-width: 38.75em) {
-	ul,
-	ol {
-		margin-left: 0;
-	}
 
 	li > ul,
 	li > ol,
