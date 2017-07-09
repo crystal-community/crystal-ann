@@ -1,6 +1,6 @@
 # Crystal [ANN]
 
-Announce your new project, blog post, version update or other Crystal resource useful for community.
+Announce your new project, blog post, version update or other Crystal work.
 
 ## Installation
 
@@ -11,6 +11,7 @@ Then:
 ```
 shards update
 amber migrate up
+crystal db/seed.cr
 ```
 
 ## Usage
