@@ -951,18 +951,8 @@ a:focus {
 	left: 0;
 }
 
-.pagination .prev:before {
-	content: "\f430";
-	left: -1px;
-}
-
 .pagination .next {
 	right: 0;
-}
-
-.pagination .next:before {
-	content: "\f429";
-	right: -1px;
 }
 
 .image-navigation,

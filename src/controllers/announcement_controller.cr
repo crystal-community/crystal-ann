@@ -1,8 +1,13 @@
 require "./application_controller"
 
 class AnnouncementController < ApplicationController
+  PER_PAGE = 10
+
   def index
-    announcements = Announcement.all("ORDER BY created_at DESC")
+    query, current_page = query_param, page_param
+    total_pages = Announcement.count(query).fdiv(PER_PAGE).ceil.to_i
+
+    announcements = Announcement.search(query, per_page: PER_PAGE, page: current_page)
     render("index.slang")
   end
 
@@ -68,5 +73,13 @@ class AnnouncementController < ApplicationController
 
   private def announcement_params
     params.to_h.select %w(title description type)
+  end
+
+  private def query_param
+    params["query"]?.try &.gsub /[^0-9A-Za-z_\-\s]/, ""
+  end
+
+  private def page_param
+    [params.fetch("page", "1").to_i { 1 }, 1].max
   end
 end

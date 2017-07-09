@@ -8,9 +8,9 @@ def create_subject
 end
 
 describe AnnouncementController do
-  Spec.before_each do
-    Announcement.clear
-  end
+  # Spec.before_each do
+  #   Announcement.clear
+  # end
 
   # describe "AnnouncementController::Index" do
   #   it "renders all the announcements" do

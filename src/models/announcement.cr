@@ -19,8 +19,6 @@ class Announcement < Granite::ORM
   field description : String
   timestamps
 
-  include Kemalyst::Validators
-
   validate :title, "is too short",
     ->(this : Announcement) { this.title.to_s.size >= 5 }
 
@@ -35,6 +33,23 @@ class Announcement < Granite::ORM
 
   validate :description, "is too long",
     ->(this : Announcement) { this.description.to_s.size <= 4000 }
+
+  def self.search(query, per_page = nil, page = 1)
+    self.all %q{
+      WHERE title ILIKE $1 OR description ILIKE $1
+      ORDER BY created_at DESC
+      LIMIT $2 OFFSET $3
+    }, ["%#{query}%", per_page, (page - 1) * per_page]
+  end
+
+  def self.count(query)
+    @@adapter.open do |db|
+      db.scalar(%q{
+        SELECT COUNT(*) FROM announcements
+        WHERE title ILIKE $1 OR description ILIKE $1
+      }, "%#{query}%").as(Int64)
+    end
+  end
 
   def typename
     TYPES[type]

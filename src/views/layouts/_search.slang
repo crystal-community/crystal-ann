@@ -1,3 +1,5 @@
+- query = params["query"]?
+
 aside.widget.search
-  form name="search"
-    input.search-input name="searchfield" type="text" pattern=".{3,}" placeholder="Search..."
+  form name="search" action="/"
+    input.search-input name="query" type="text" pattern=".{3,}" placeholder="Search..." value="#{query}"
