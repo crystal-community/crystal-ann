@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Crystal [ANN]
+    title = "#{TITLE} | #{DESCRIPTION}"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -18,9 +18,9 @@ html
         header#masthead.site-header role="banner"
           div.site-branding
             h1.site-title
-              a href="/" Crystal [ANN]
+              a href="/" = TITLE
             p.site-description
-              | Announce new project, blog post, version update or any other Crystal resource.
+              = DESCRIPTION
 
             button.secondary-toggle
 
@@ -36,5 +36,6 @@ html
             == content
 
       footer#colophon.site-footer role="contentinfo"
+        == render_template "layouts/_footer.slang"
 
     script src="/javascripts/main.js"

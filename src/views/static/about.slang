@@ -24,7 +24,7 @@ div.page-content
     a href="http://www.ambercr.io/" target="_blank" = "Amber Web Framework"
     | and itself is a great example of Crystal's awesomeness.
 
-  h2 Why should I post my stuff here?
+  h2 Why should I post my stuff here ?
   p
     | Crystal [ANN] is intended to spread your announcement with community.
     | Your announcement will appear on this website, on
