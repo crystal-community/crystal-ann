@@ -650,7 +650,6 @@ a:focus {
 	color: rgba(51, 51, 51, 0.7);
 }
 
-
 /**
  * 6.2 Menus
  */
@@ -1774,7 +1773,6 @@ a.post-thumbnail:focus {
 .byline,
 .cat-links,
 .tags-links,
-.actions,
 .entry-link,
 .entry-format,
 .full-size-link {

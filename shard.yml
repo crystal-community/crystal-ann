@@ -18,3 +18,6 @@ dependencies:
  
   pg:
     github: will/crystal-pg
+
+  multi_auth:
+    github: msa7/multi_auth

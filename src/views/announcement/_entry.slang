@@ -14,14 +14,15 @@ article.hentry
     span.byline
       span.author.vcard
         i.fa.fa-user
-        | Anonymous
+        = announcement.user.try &.name || "Anonymous"
 
     span.tags-links
       i.fa.fa-tag
       = announcement.typename
 
-    span.actions
-      a href="/announcements/#{ announcement.id }/edit"
-        i.fa.fa-pencil
-      a href="/announcements/#{ announcement.id }?_method=delete" onclick="return confirm('Are you sure?');"
-        i.fa.fa-trash
+    - if can_update?(announcement)
+      span.actions
+        a href="/announcements/#{ announcement.id }/edit"
+          i.fa.fa-pencil
+        a href="/announcements/#{ announcement.id }?_method=delete" onclick="return confirm('Are you sure?');"
+          i.fa.fa-trash

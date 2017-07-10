@@ -17,6 +17,7 @@ class Announcement < Granite::ORM
 
   field type : Int32
   field title : String
+  field user_id : Int64
   field description : String
   timestamps
 
@@ -70,5 +71,9 @@ class Announcement < Granite::ORM
 
   def content
     Markdown.to_html(description.not_nil!)
+  end
+
+  def user
+    User.find(user_id)
   end
 end

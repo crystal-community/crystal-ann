@@ -22,8 +22,6 @@ form action="#{ action }" method="post"
 
   div.actions
     button type="submit" Submit
-    a href="/" Cancel
-
 
 link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
 script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"

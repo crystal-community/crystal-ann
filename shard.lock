@@ -20,6 +20,10 @@ shards:
     github: jeromegn/kilt
     version: 0.3.3
 
+  multi_auth:
+    github: msa7/multi_auth
+    version: 0.1.0
+
   pg:
     github: will/crystal-pg
     version: 0.13.3

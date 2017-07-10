@@ -27,7 +27,10 @@ class AnnouncementController < ApplicationController
   end
 
   def create
+    check_signed_in!
+
     announcement = Announcement.new announcement_params
+    announcement.user_id = current_user!.id
 
     if announcement.valid? && announcement.save
       flash["success"] = "Created Announcement successfully."
@@ -39,41 +42,40 @@ class AnnouncementController < ApplicationController
   end
 
   def edit
-    if announcement = Announcement.find params["id"]
+    announcement = find_announcement
+    if announcement && can_update?(announcement)
       render("edit.slang")
     else
-      flash["warning"] = "Announcement with ID #{params["id"]} Not Found"
       redirect_to "/announcements"
     end
   end
 
   def update
-    if announcement = Announcement.find(params["id"])
+    announcement = find_announcement
+    if announcement && can_update?(announcement)
       announcement.set_attributes announcement_params
       if announcement.valid? && announcement.save
-        flash["success"] = "Updated Announcement successfully."
         redirect_to "/announcements/#{announcement.id}"
       else
-        flash["danger"] = "Could not update Announcement!"
         render("edit.slang")
       end
     else
-      flash["warning"] = "Announcement with ID #{params["id"]} Not Found"
       redirect_to "/announcements"
     end
   end
 
   def destroy
-    if announcement = Announcement.find params["id"]
-      announcement.destroy
-    else
-      flash["warning"] = "Announcement with ID #{params["id"]} Not Found"
-    end
+    announcement = find_announcement
+    announcement.destroy if announcement && can_update?(announcement)
     redirect_to "/announcements"
   end
 
   private def announcement_params
     params.to_h.select %w(title description type)
+  end
+
+  private def find_announcement
+    Announcement.find params["id"]
   end
 
   private def query_param

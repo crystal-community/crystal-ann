@@ -25,6 +25,8 @@ Amber::Server.instance.config do |app|
   routes :web do
     resources "/announcements", AnnouncementController
     get "/rss", RSSController, :show
+    get "/sessions/new", SessionsController, :new
+    get "/github/auth", SessionsController, :create
     get "/", AnnouncementController, :index
   end
 end

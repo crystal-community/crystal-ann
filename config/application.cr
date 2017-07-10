@@ -11,3 +11,6 @@ end
 
 require "yaml"
 SITE = YAML.parse(File.read "config/site.yml")[AMBER_ENV]
+
+require "multi_auth"
+MultiAuth.config("github", ENV["ID"], ENV["SECRET"])
