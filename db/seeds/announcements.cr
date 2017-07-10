@@ -7,7 +7,10 @@ module Seeds::Announcements
       .try(&.first) || 0
 
     attributes = {:type => type} of Symbol => Int32 | String
-    Announcement.create attributes.merge!(params.to_h)
+    Announcement.create(attributes.merge!(params.to_h)).tap do |a|
+      a.created_at = rand(15).days.ago - rand(60).minutes
+      a.save
+    end
   end
 
   def create_records

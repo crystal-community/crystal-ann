@@ -13,6 +13,7 @@ class AnnouncementController < ApplicationController
 
   def show
     if announcement = Announcement.find params["id"]
+      newer, older = announcement.next, announcement.prev
       render("show.slang")
     else
       flash["warning"] = "Announcement with ID #{params["id"]} Not Found"

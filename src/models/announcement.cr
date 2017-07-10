@@ -56,6 +56,14 @@ class Announcement < Granite::ORM
     Announcement.all("WHERE created_at > $1 ORDER BY created_at DESC", from)
   end
 
+  def next
+    Announcement.all("WHERE created_at > $1 ORDER BY created_at LIMIT 1", created_at).first?
+  end
+
+  def prev
+    Announcement.all("WHERE created_at < $1 ORDER BY created_at DESC LIMIT 1", created_at).first?
+  end
+
   def typename
     TYPES[type]
   end
