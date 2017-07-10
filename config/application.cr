@@ -8,3 +8,6 @@ Amber::Server.instance.config do |app|
   app.log = ::Logger.new(STDOUT)
   app.log.level = ::Logger::INFO
 end
+
+require "yaml"
+SITE = YAML.parse(File.read "config/site.yml")[AMBER_ENV]

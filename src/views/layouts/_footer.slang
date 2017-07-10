@@ -1,9 +1,9 @@
 div.site-info
   div.footer-block.copyright
-    | © #{Time.now.year} #{TITLE}. #{DESCRIPTION}
+    | © #{Time.now.year} #{SITE["title"]}. #{SITE["description"]}
 
   div.footer-block
-    h3 = TITLE
+    h3 = SITE["title"]
     a href="/announcements/new" = "Announce"
     a href="/about" = "About"
     a href="/rss" = "RSS"

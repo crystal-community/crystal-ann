@@ -1,0 +1,11 @@
+default: &default
+  title: Crystal [ANN]
+  description: Announce new project, blog post, version update or any other Crystal work.
+
+development:
+  <<: *default
+  url: http://localhost:3008
+
+production:
+  <<: *default
+  url: https://crystal-ann.com

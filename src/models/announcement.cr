@@ -52,6 +52,10 @@ class Announcement < Granite::ORM
     end
   end
 
+  def self.newest(from = 2.weeks.ago)
+    Announcement.all("WHERE created_at > $1 ORDER BY created_at DESC", from)
+  end
+
   def typename
     TYPES[type]
   end

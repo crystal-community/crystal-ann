@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = "#{TITLE} | #{DESCRIPTION}"
+    title #{SITE["title"]} | #{SITE["description"]}
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -18,9 +18,8 @@ html
         header#masthead.site-header role="banner"
           div.site-branding
             h1.site-title
-              a href="/" = TITLE
-            p.site-description
-              = DESCRIPTION
+              a href="/" = SITE["title"]
+            p.site-description = SITE["description"]
 
             button.secondary-toggle
 
