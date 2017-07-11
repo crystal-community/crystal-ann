@@ -4,7 +4,7 @@ require "../../src/models/user.cr"
 describe User do
   attributes = {
     :uid      => "1231231",
-    :name     => "John Doe",
+    :login    => "veelenga",
     :provider => "github",
   }
 

@@ -1,9 +1,7 @@
 require "amber"
 require "../src/controllers/**"
-require "../src/mailers/**"
 require "../src/models/**"
 require "../src/views/**"
-require "../src/models/**"
 require "../config/*"
 require "./seeds/*"
 

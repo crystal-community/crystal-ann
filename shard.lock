@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: Amber-Crystal/amber
-    version: 0.1.31
+    version: 0.1.4
 
   db:
     github: crystal-lang/crystal-db
@@ -20,9 +20,13 @@ shards:
     github: jeromegn/kilt
     version: 0.3.3
 
+  micrate:
+    github: juanedi/micrate
+    version: 0.3.0
+
   multi_auth:
     github: msa7/multi_auth
-    version: 0.1.0
+    commit: d429ebdfe30eaafc34f50336512e58962837142f
 
   pg:
     github: will/crystal-pg
