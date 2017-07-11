@@ -4,6 +4,7 @@ class ApplicationController < Amber::Controller::Base
   @current_user : User?
 
   protected def current_user
+    return @current_user = User.find_by(:login, "veelenga") if AMBER_ENV == "development"
     @current_user ||= User.find_by(:id, session["user_id"]) if session["user_id"]
   end
 

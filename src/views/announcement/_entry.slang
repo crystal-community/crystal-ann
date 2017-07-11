@@ -11,10 +11,12 @@ article.hentry
         i.fa.fa-calendar
         = announcement.created_at.try &.to_s "%b %d, %Y"
 
-    span.byline
-      span.author.vcard
-        i.fa.fa-user
-        = announcement.user.try &.name || "Anonymous"
+    - if user = announcement.user
+      span.byline
+        span.author.vcard
+          a href="https://github.com/#{user.login}" target="_blank"
+            i.fa.fa-github
+            = user.login
 
     span.tags-links
       i.fa.fa-tag

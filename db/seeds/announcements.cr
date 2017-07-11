@@ -1,12 +1,18 @@
 module Seeds::Announcements
   extend self
 
+  def user_id
+    user = User.find_by(:login, "veelenga") ||
+           Seeds::Users.user(login: "veelenga", name: "V. Elenhaupt", provider: "github", uid: "1111")
+    user.id.not_nil!.to_i
+  end
+
   def announcement(typename, **params)
     type = Announcement::TYPES
       .find { |k, v| v == typename }
       .try(&.first) || 0
 
-    attributes = {:type => type} of Symbol => Int32 | String
+    attributes = {:type => type, :user_id => user_id} of Symbol => Int32 | Int64 | String
     Announcement.create(attributes.merge!(params.to_h)).tap do |a|
       a.created_at = rand(15).days.ago - rand(60).minutes
       a.save

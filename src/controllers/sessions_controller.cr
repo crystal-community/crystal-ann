@@ -1,19 +1,30 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to github_oauth.authorize_uri
+    redirect_to oauth(find_provider).authorize_uri
   end
 
   def create
-    u = github_oauth.provider.user(params.to_h)
+    provider = find_provider
+    u = oauth(provider).provider.user(params.to_h)
 
-    user = User.find_by(:uid, u.uid) || User.new
-    user.set_attributes({:uid => u.uid, :name => u.name, :provider => "github"})
+    user = User.find_by_uid_and_provider(u.uid, provider) || User.new
+    user.set_attributes({
+      :uid      => u.uid,
+      :login    => u.nickname,
+      :name     => u.name,
+      :provider => provider,
+    })
 
-    session["user_id"] = user.id.to_s if user.save
+    session["user_id"] = user.id.to_s if user.valid? && user.save
     redirect_to "/announcements/new"
   end
 
-  private def github_oauth
-    MultiAuth.make "github", "https://2f880ffc.ngrok.io/github/auth"
+  private def oauth(provider)
+    hosturl = SITE["url"]
+    MultiAuth.make provider, "#{hosturl}/#{provider}/auth"
+  end
+
+  private def find_provider
+    params["provider"]? || "github"
   end
 end
