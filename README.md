@@ -1,31 +1,30 @@
 # Crystal [ANN]
 
-Announce your new project, blog post, version update or other Crystal work.
+Source code for https://crystal-ann.com.
 
-## Installation
+## Setup
 
 Create a pg database called `crystal_ann` and configure the `config/database.yml`
 to provide the credentials to access the table.
 
 Then:
 ```
-shards update
-amber migrate up
-crystal db/seed.cr
+$ shards update
+$ amber migrate up
+$ crystal db/seed.cr
 ```
 
-## Usage
+## Run
 
-To run the demo:
 ```
-crystal build src/crystal-ann.cr
-./crystal-ann
+$ amber watch
 ```
 
-## Contributing
+## Deployment
 
-1. Fork it ( https://github.com/veelenga/crystal-ann/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
+```
+$ heroku create app-name --buildpack https://github.com/crystal-lang/heroku-buildpack-crystal.git
+$ heroku config:set GITHUB_ID=github_client_id
+$ heroku config:set GITHUB_SECRET=github_client_secret
+$ git push heroku master
+```
