@@ -8,6 +8,7 @@ class User < Granite::ORM
   field login : String
   field uid : String
   field provider : String
+  field role : String
   timestamps
 
   validate :login, "can't be blank", ->(this : User) { !this.login.to_s.blank? }
@@ -15,7 +16,11 @@ class User < Granite::ORM
   validate :provider, "can't be blank", ->(this : User) { !this.provider.to_s.blank? }
 
   def can_update?(announcement)
-    announcement.try &.user_id == id
+    admin? || announcement.user_id == id
+  end
+
+  def admin?
+    role == "admin"
   end
 
   def self.find_by_uid_and_provider(uid, provider)

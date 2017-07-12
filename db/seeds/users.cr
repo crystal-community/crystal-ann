@@ -9,7 +9,8 @@ module Seeds::Users
     user login: "veelenga",
       name: "V. Elenhaupt",
       provider: "github",
-      uid: "111111"
+      uid: "111111",
+      role: "admin"
 
     user login: "ann",
       name: "Ann Doe",
