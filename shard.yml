@@ -19,9 +19,12 @@ dependencies:
   pg:
     github: will/crystal-pg
 
+  # multi_auth:
+  #   github: msa7/multi_auth
+
   multi_auth:
-    github: msa7/multi_auth
-    commit: d429eb
+    github: veelenga/multi_auth
+    branch: feature/crystal-ann
 
   micrate:
     github: juanedi/micrate
