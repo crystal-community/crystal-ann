@@ -15,7 +15,7 @@ div.site-info
     a href="https://crystal-lang.org/docs/" target="_blank" = "Learn"
     a href="https://github.com/crystal-lang/crystal" target="_blank" = "Source Code"
     a href="https://play.crystal-lang.org/#/cr" target="_blank" = "Play Online"
-    a href="https://gitter.im/crystal-lang/crystal" target="_blank" = "Chat Room"
     a href="https://github.com/veelenga/awesome-crystal" target="_blank" = "Awesome Crystal List"
+    a href="https://crystalshards.xyz" target="_blank" = "Crystal Shards"
 
   br style="clear:left;"

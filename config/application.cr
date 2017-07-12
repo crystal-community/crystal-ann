@@ -24,7 +24,7 @@ MultiAuth.config("github", ENV.fetch("GITHUB_ID", ""), ENV.fetch("GITHUB_SECRET"
 
 require "micrate"
 require "pg"
-if AMBER_ENV == "production"
+if AMBER_ENV != "development"
   puts "Migrating data"
   Micrate::DB.connection_url = ENV["DATABASE_URL"]?
   Micrate::Cli.run_up

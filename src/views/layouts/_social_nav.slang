@@ -2,7 +2,7 @@ nav#social-navigation.social-navigation
   div.menu-social-links-container
     ul#menu-social-links.menu
       li
-        a href="https://twitter.com/crystal-ann" target="_blank"
+        a href="https://twitter.com/crystallang_ann" target="_blank"
           i.fa.fa-twitter.fa-3x
 
       li
