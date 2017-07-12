@@ -38,4 +38,5 @@ html
         == render_template "layouts/_footer.slang"
 
     script src="/javascripts/main.js"
-    script src="/javascripts/ga.js"
+
+    == render_template "layouts/_ga.slang"
