@@ -1,8 +1,6 @@
 require "amber"
-require "../src/controllers/**"
+require "../config/application"
 require "../src/models/**"
-require "../src/views/**"
-require "../config/*"
 require "./seeds/*"
 
 ENV["AMBER_ENV"] = "development"
