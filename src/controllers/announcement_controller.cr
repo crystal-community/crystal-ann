@@ -1,4 +1,5 @@
 require "./application_controller"
+require "../workers/tweet_announcement"
 
 class AnnouncementController < ApplicationController
   PER_PAGE = 10
@@ -33,10 +34,9 @@ class AnnouncementController < ApplicationController
     announcement.user_id = current_user!.id
 
     if announcement.valid? && announcement.save
-      flash["success"] = "Created Announcement successfully."
+      Workers::TweetAnnouncement.async.perform(announcement.id.not_nil!)
       redirect_to "/announcements"
     else
-      flash["danger"] = "Could not create Announcement!"
       render("new.slang")
     end
   end

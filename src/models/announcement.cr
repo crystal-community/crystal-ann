@@ -76,4 +76,8 @@ class Announcement < Granite::ORM
   def user
     User.find(user_id)
   end
+
+  def path
+    "/announcements/#{id}"
+  end
 end
