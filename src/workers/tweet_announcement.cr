@@ -17,7 +17,7 @@ module Workers
         Twitter::REST::Client.new ENV["TWITTER_CONSUMER_KEY"],
           ENV["TWITTER_CONSUMER_SECRET"],
           ENV["TWITTER_ACCESS_TOKEN"],
-          ENV["TWITTER_TOKEN_SECRET"]
+          ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
 
     def tweet(announcement)
