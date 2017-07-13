@@ -28,3 +28,10 @@ dependencies:
 
   micrate:
     github: juanedi/micrate
+
+  sidekiq:
+    github: mperham/sidekiq.cr
+    branch: master
+
+  twitter:
+    github: veelenga/twitter.cr

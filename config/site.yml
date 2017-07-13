@@ -6,6 +6,10 @@ development:
   <<: *default
   url: http://localhost:3008
 
+staging:
+  <<: *default
+  url: https://crystal-ann-staging.herokuapp.com
+
 production:
   <<: *default
   url: https://crystal-ann.com
