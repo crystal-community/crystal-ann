@@ -1,4 +1,6 @@
 class ApplicationController < Amber::Controller::Base
+  include Helpers::QueryHelper
+
   LAYOUT = "application.slang"
 
   @current_user : User?

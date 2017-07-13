@@ -1,6 +1,7 @@
 require "amber"
 require "micrate"
 require "pg"
+require "./helpers/**"
 require "./controllers/**"
 require "./mailers/**"
 require "./models/**"
