@@ -1,2 +1,2 @@
 web: ./app
-worker: ./sidekiq
+worker: ./sidekiq -c 3
