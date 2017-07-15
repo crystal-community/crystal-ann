@@ -32,6 +32,7 @@ And set environment variables:
 
 ```
 $ heroku config:set AMBER_ENV=production
+$ heroku config:set REDIS_PROVIDER=REDIS_URL
 $ heroku config:set GITHUB_ID=github_client_id
 $ heroku config:set GITHUB_SECRET=github_client_secret
 $ heroku config:set TWITTER_CONSUMER_KEY=twitter_consumer_key
