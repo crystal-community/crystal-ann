@@ -2,7 +2,6 @@ require "amber"
 require "yaml"
 require "sidekiq"
 require "multi_auth"
-require "option_parser"
 
 AMBER_PORT = ENV["PORT"]? || 3008
 AMBER_ENV  = ENV["AMBER_ENV"]? || "development"

@@ -3,8 +3,6 @@ require "../config/application"
 require "../src/models/**"
 require "./seeds/*"
 
-ENV["AMBER_ENV"] = "development"
-
 puts "Preparing development database:"
 
 puts "  * Deleting existed records"

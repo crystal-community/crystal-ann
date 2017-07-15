@@ -17,7 +17,6 @@ class AnnouncementController < ApplicationController
       newer, older = announcement.next, announcement.prev
       render("show.slang")
     else
-      flash["warning"] = "Announcement with ID #{params["id"]} Not Found"
       redirect_to "/announcements"
     end
   end
