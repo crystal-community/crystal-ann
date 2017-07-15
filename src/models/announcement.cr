@@ -27,7 +27,7 @@ class Announcement < Granite::ORM
   validate :title, "is too long",
     ->(this : Announcement) { this.title.to_s.size <= 100 }
 
-  validate :type, "is not valid",
+  validate :type, "is not selected",
     ->(this : Announcement) { TYPES.keys.includes? this.type }
 
   validate :description, "is too short",

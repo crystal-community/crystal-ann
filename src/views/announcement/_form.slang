@@ -14,6 +14,7 @@ form action="#{ action }" method="post"
   textarea rows="10" name="description" placeholder="Describe your announcement here and include links..." = announcement.description
 
   select name="type"
+    option value="-1" selected="selected" = "-- select type --"
     - Announcement::TYPES.each do |type, name|
       - if type == announcement.type
         option value="#{ type }" selected="selected" = name
