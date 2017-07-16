@@ -54,7 +54,7 @@ shards:
 
   radix:
     github: luislavena/radix
-    commit: 211418416adba540b594af2260e1b5d0c8877c9e
+    commit: 
 
   redis:
     github: stefanwille/crystal-redis
@@ -70,5 +70,5 @@ shards:
 
   twitter:
     github: veelenga/twitter.cr
-    commit: d12bd67edcfcfe0867b33c9e5ebae2052b991857
+    commit: d70d460a2f8edb2961e1da2b44382bfb2dfd61bf
 
