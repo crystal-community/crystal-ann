@@ -1,4 +1,4 @@
-# Crystal [ANN]
+# Crystal [ANN] [![Build Status](https://travis-ci.org/veelenga/crystal-ann.svg?branch=master)](https://travis-ci.org/veelenga/crystal-ann)
 
 Source code for https://crystal-ann.com.
 
