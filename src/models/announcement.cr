@@ -65,19 +65,29 @@ class Announcement < Granite::ORM
     Announcement.all("WHERE created_at < $1 ORDER BY created_at DESC LIMIT 1", created_at).first?
   end
 
-  def typename
-    TYPES[type]
+  def self.find_by_hashid(hashid)
+    if id = (HASHIDS.decode hashid).first?
+      Announcement.find id
+    end
   end
 
-  def content
-    Markdown.to_html(description.not_nil!)
+  def hashid
+    HASHIDS.encode([id.not_nil!]) if id
+  end
+
+  def short_path
+    id ? "/=#{hashid}" : nil
+  end
+
+  def typename
+    TYPES[type]
   end
 
   def user
     User.find(user_id)
   end
 
-  def path
-    id ? "/announcements/#{id}" : nil
+  def content
+    Markdown.to_html(description.not_nil!)
   end
 end

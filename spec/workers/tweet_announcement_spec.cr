@@ -19,9 +19,9 @@ describe Workers::TweetAnnouncement do
             .includes?(SITE.url).should eq true
     end
 
-    it "includes announcement.path" do
+    it "includes announcement.short_path" do
       worker.tweet_template(announcement)
-            .includes?(announcement.path.to_s).should eq true
+            .includes?(announcement.short_path.to_s).should eq true
     end
 
     it "includes #crystallang hashtag" do

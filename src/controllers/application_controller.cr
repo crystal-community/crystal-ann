@@ -1,3 +1,5 @@
+require "../helpers/*"
+
 class ApplicationController < Amber::Controller::Base
   include Helpers::QueryHelper
   include Helpers::PageTitleHelper

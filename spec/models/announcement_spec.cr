@@ -59,16 +59,28 @@ describe Announcement do
     end
   end
 
-  describe "#path" do
-    it "returns path to the announcement" do
+  describe "#short_path" do
+    it "returns short path to the announcement" do
       announcement(title: "first announcement")
         .tap { |a| a.id = 1_i64 }
-        .path.should eq "/announcements/1"
+        .short_path.should eq "/=D49Nz"
     end
 
     it "returns nil if announcement does not have id" do
       announcement(title: "second announcement")
-        .path.should eq nil
+        .short_path.should eq nil
+    end
+  end
+
+  describe "#hashid" do
+    it "returns nil if id is not present" do
+      announcement(title: "hashid test").hashid.should eq nil
+    end
+
+    it "returns hash id if id is present" do
+      announcement(title: "hashid test")
+        .tap { |a| a.id = 1_i64 }
+        .hashid.should eq "D49Nz"
     end
   end
 end

@@ -30,7 +30,7 @@ module Workers
     end
 
     def tweet_template(announcement)
-      "#{announcement.title} #{SITE.url}#{announcement.path} #crystallang"
+      "#{announcement.title} #{SITE.url}#{announcement.short_path} #crystallang"
     end
   end
 end
