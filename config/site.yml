@@ -2,6 +2,10 @@ default: &default
   name: Crystal [ANN]
   description: Announce new project, blog post, version update or any other Crystal work
 
+test:
+  <<: *default
+  url: https://testing.com
+
 development:
   <<: *default
   url: http://localhost:3008

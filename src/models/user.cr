@@ -15,7 +15,7 @@ class User < Granite::ORM
   validate :uid, "can't be blank", ->(this : User) { !this.uid.to_s.blank? }
   validate :provider, "can't be blank", ->(this : User) { !this.provider.to_s.blank? }
 
-  def can_update?(announcement)
+  def can_update?(announcement : Announcement)
     admin? || announcement.user_id == id
   end
 

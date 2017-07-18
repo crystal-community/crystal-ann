@@ -1,16 +1,6 @@
 require "./spec_helper"
 require "../../src/models/announcement.cr"
 
-def announcement(**params)
-  attributes = {
-    :title       => "title",
-    :description => "description",
-    :type        => Announcement::TYPES.keys.first,
-  }.merge!(params.to_h)
-
-  Announcement.new attributes
-end
-
 describe Announcement do
   describe "Validation" do
     it "succeeds on valid parameters" do
@@ -53,7 +43,7 @@ describe Announcement do
       end
     end
 
-    it "raises error if type if wrong" do
+    it "raises error if type is wrong" do
       expect_raises { announcement(type: -1).typename }
     end
   end
@@ -61,6 +51,24 @@ describe Announcement do
   describe "#content" do
     it "returns html content" do
       announcement(description: "test").content.should eq "<p>test</p>"
+    end
+
+    it "encodes html tags" do
+      announcement(description: "<script>console.log('hello')</script>")
+        .content.should eq "<p>&lt;script>console.log('hello')&lt;/script></p>"
+    end
+  end
+
+  describe "#path" do
+    it "returns path to the announcement" do
+      announcement(title: "first announcement")
+        .tap { |a| a.id = 1_i64 }
+        .path.should eq "/announcements/1"
+    end
+
+    it "returns nil if announcement does not have id" do
+      announcement(title: "second announcement")
+        .path.should eq nil
     end
   end
 end

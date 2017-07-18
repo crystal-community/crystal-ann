@@ -6,7 +6,7 @@ struct SiteSettings
   def initialize(@name : String, @description : String, @url : String)
   end
 
-  def self.load
+  def self.load(env = AMBER_ENV)
     config = YAML.parse(File.read "config/site.yml")[AMBER_ENV]
 
     SiteSettings.new config["name"].as_s,
