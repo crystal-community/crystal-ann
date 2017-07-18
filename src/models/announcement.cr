@@ -78,6 +78,6 @@ class Announcement < Granite::ORM
   end
 
   def path
-    "/announcements/#{id}"
+    id ? "/announcements/#{id}" : nil
   end
 end
