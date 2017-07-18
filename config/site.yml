@@ -1,6 +1,6 @@
 default: &default
-  title: Crystal [ANN]
-  description: Announce new project, blog post, version update or any other Crystal work.
+  name: Crystal [ANN]
+  description: Announce new project, blog post, version update or any other Crystal work
 
 development:
   <<: *default

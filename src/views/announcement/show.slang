@@ -1,3 +1,5 @@
+- page_title announcement.title
+
 == render "_entry.slang"
 
 nav.navigation.post-navigation role="navigation"

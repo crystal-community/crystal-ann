@@ -1,6 +1,6 @@
 rss version=2.0
   channel
-    title = SITE.title
+    title = SITE.name
     description = SITE.description
     <link>#{SITE.url}</link>
 
