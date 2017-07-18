@@ -41,8 +41,8 @@ shards:
     version: 0.3.0
 
   multi_auth:
-    github: veelenga/multi_auth
-    commit: 212ea0a3ce1a5b03f2213b0d8eca099fd79b024c
+    github: msa7/multi_auth
+    commit: 83f7c7bf8cbab7d716daf27caffbb5720df0de26
 
   pg:
     github: will/crystal-pg
