@@ -21,7 +21,7 @@ module Workers
     end
 
     def tweet(announcement)
-      logger.error "Tweeting Announcement ##{announcement.id}"
+      logger.info "Tweeting Announcement ##{announcement.id}"
       status = tweet_template announcement
       twitter_client.post("/1.1/statuses/update.json", {"status" => status})
     rescue e
@@ -30,8 +30,7 @@ module Workers
     end
 
     def tweet_template(announcement)
-      site_url = SITE["url"]
-      "#{announcement.title} #{site_url}#{announcement.path} #crystallang"
+      "#{announcement.title} #{SITE.url}#{announcement.path} #crystallang"
     end
   end
 end

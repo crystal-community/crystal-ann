@@ -54,7 +54,7 @@ shards:
 
   radix:
     github: luislavena/radix
-    commit: 
+    commit: 211418416adba540b594af2260e1b5d0c8877c9e
 
   redis:
     github: stefanwille/crystal-redis

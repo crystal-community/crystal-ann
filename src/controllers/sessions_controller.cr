@@ -20,8 +20,7 @@ class SessionsController < ApplicationController
   end
 
   private def oauth(provider)
-    hosturl = SITE["url"]
-    MultiAuth.make provider, "#{hosturl}/#{provider}/auth"
+    MultiAuth.make provider, "#{SITE.url}/#{provider}/auth"
   end
 
   private def find_provider
