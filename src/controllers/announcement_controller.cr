@@ -33,7 +33,7 @@ class AnnouncementController < ApplicationController
     announcement.user_id = current_user!.id
 
     if announcement.valid? && announcement.save
-      Workers::TweetAnnouncement.async.perform(announcement.id.not_nil!) rescue nil
+      Workers::TweetAnnouncement.new.perform(announcement.id.not_nil!)
       redirect_to "/announcements"
     else
       render("new.slang")
