@@ -2,22 +2,23 @@
 
 Source code for https://crystal-ann.com.
 
-## Setup
+## Develop
 
-Create a pg database called `crystal_ann` and configure the `config/database.yml`
-to provide the credentials to access the table.
+Create a pg database called `crystal_ann`. Then:
 
-Then:
 ```
 $ shards update
 $ amber migrate up
 $ crystal db/seed.cr
-```
-
-## Run
-
-```
 $ amber watch
+```
+
+## Test
+
+Create a pg database called `crystal_ann_test`. Then:
+
+```
+$ MICRATE_RUN_UP=true crystal spec
 ```
 
 ## Deployment to Heroku
@@ -28,15 +29,18 @@ $ heroku buildpacks:add https://github.com/veelenga/heroku-buildpack-sidekiq.cr
 $ git push heroku master
 ```
 
-And set environment variables:
+And set environment variables with `heroku config:set VAR=VAL`:
 
 ```
-$ heroku config:set AMBER_ENV=production
-$ heroku config:set REDIS_PROVIDER=REDIS_URL
-$ heroku config:set GITHUB_ID=github_client_id
-$ heroku config:set GITHUB_SECRET=github_client_secret
-$ heroku config:set TWITTER_CONSUMER_KEY=twitter_consumer_key
-$ heroku config:set TWITTER_CONSUMER_SECRET=twitter_consumer_secret
-$ heroku config:set TWITTER_ACCESS_TOKEN=twitter_access_token
-$ heroku config:set TWITTER_ACCESS_TOKEN_SECRET=twitter_access_token_secret
+AMBER_ENV
+MICRATE_RUN_UP
+REDIS_PROVIDER
+
+GITHUB_ID
+GITHUB_SECRET
+
+TWITTER_CONSUMER_KEY
+TWITTER_CONSUMER_SECRET
+TWITTER_ACCESS_TOKEN
+TWITTER_ACCESS_TOKEN_SECRET
 ```

@@ -1,9 +1,6 @@
 default: &default
   database: postgresql://localhost/crystal_ann
 
-test:
-  database: postgresql://localhost/crystal_ann_test
-
 development:
   <<: *default
 
@@ -12,3 +9,6 @@ staging:
 
 production:
   <<: *default
+
+test:
+  database: postgresql://localhost/crystal_ann_test
