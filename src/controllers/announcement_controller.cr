@@ -69,6 +69,14 @@ class AnnouncementController < ApplicationController
     redirect_to "/announcements"
   end
 
+  def expand
+    if announcement = Announcement.find_by_hashid(params["hashid"])
+      redirect_to "/announcements/#{announcement.id}"
+    else
+      redirect_to "/announcements"
+    end
+  end
+
   private def announcement_params
     params.to_h.select %w(title description type)
   end
