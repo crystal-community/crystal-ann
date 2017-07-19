@@ -1,5 +1,5 @@
 require "../spec_helper"
-require "../helpers/query_helper_spec"
+require "../../src/helpers/query_helper"
 
 class DumbController
   include Helpers::QueryHelper
