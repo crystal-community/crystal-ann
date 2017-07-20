@@ -1,11 +1,12 @@
 require "../spec_helper"
 
 describe DBSettings do
-  %w(test development staging production).each do |env|
-    db = DBSettings.load env
+  {% for env in %w(test development staging production) %}
 
-    it "has database_url in #{env} environment" do
-      db.database_url.blank?.should eq false
+    it "has database_url in {{env.id}} environment" do
+      db = DBSettings.load {{env}}
+      expect(db.database_url.blank?).to eq false
     end
-  end
+
+  {% end %}
 end

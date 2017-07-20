@@ -7,8 +7,9 @@ def user(**params)
     :uid      => "123123",
     :login    => "johndoe",
     :provider => "github",
-  }.merge!(params.to_h)
+  } of Symbol => String | Int64
 
+  params.each { |k, v| attributes[k] = v }
   User.new attributes
 end
 
@@ -18,7 +19,8 @@ def announcement(**params)
     :title       => "title",
     :description => "description",
     :type        => Announcement::TYPES.keys.first,
-  }.merge!(params.to_h)
+  } of Symbol => String | Int64 | Int32
 
+  params.each { |k, v| attributes[k] = v }
   Announcement.new attributes
 end

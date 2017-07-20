@@ -10,11 +10,11 @@ describe Helpers::PageTitleHelper do
     it "sets page title" do
       controller = DumbController.new
       controller.page_title "my page title"
-      controller.page_title.should eq "my page title - #{SITE.name}"
+      expect(controller.page_title).to eq "my page title - #{SITE.name}"
     end
 
     it "returns default site title with suffix" do
-      DumbController.new.page_title.should eq "#{SITE.description} - #{SITE.name}"
+      expect(DumbController.new.page_title).to eq "#{SITE.description} - #{SITE.name}"
     end
   end
 end
