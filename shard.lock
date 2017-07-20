@@ -72,6 +72,10 @@ shards:
     github: jeromegn/slang
     commit: b817c89c7e5ae39562710c0d6c7f42cee685e14f
 
+  spec2:
+    github: waterlink/spec2.cr
+    version: 0.11.0
+
   twitter:
     github: veelenga/twitter.cr
     commit: d70d460a2f8edb2961e1da2b44382bfb2dfd61bf

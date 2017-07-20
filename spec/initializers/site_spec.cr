@@ -2,34 +2,34 @@ require "../spec_helper"
 
 describe SiteSettings do
   it "loads SITE settings" do
-    SITE.should_not eq nil
+    expect(SITE).not_to be_nil
   end
 
   it "loads SITE.name" do
-    SITE.name.blank?.should eq false
+    expect(SITE.name.blank?).to be_false
   end
 
   it "loads SITE.description" do
-    SITE.description.blank?.should eq false
+    expect(SITE.description.blank?).to be_false
   end
 
   it "loads SITE.url" do
-    SITE.url.blank?.should eq false
+    expect(SITE.url.blank?).to be_false
   end
 
-  %w(development staging production).each do |env|
-    site = SiteSettings.load env
+  {% for env in %w(test development staging production) %}
+    let(:site) { SiteSettings.load {{env}} }
 
-    it "has name in #{env} environment" do
-      site.name.blank?.should eq false
+    it "has name in {{env.id}} environment" do
+      expect(site.name.blank?).to be_false
     end
 
-    it "has description in #{env} environment" do
-      site.description.blank?.should eq false
+    it "has description in {{env.id}} environment" do
+      expect(site.description.blank?).to be_false
     end
 
-    it "has url in #{env} environment" do
-      site.url.blank?.should eq false
+    it "has url in {{env.id}} environment" do
+      expect(site.url.blank?).to be_false
     end
-  end
+  {% end %}
 end
