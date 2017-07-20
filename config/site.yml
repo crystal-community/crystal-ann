@@ -1,6 +1,7 @@
 default: &default
   name: Crystal [ANN]
   description: Announce new project, blog post, version update or any other Crystal work
+  force_ssl: false
 
 test:
   <<: *default
@@ -13,7 +14,9 @@ development:
 staging:
   <<: *default
   url: https://crystal-ann-staging.herokuapp.com
+  force_ssl: true
 
 production:
   <<: *default
   url: https://crystal-ann.com
+  force_ssl: true
