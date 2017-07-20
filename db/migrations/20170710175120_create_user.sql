@@ -14,6 +14,6 @@ ALTER TABLE announcements ADD COLUMN user_id BIGSERIAL REFERENCES users (id);
 
 -- +micrate Down
 
-ALTER TABLE announcements DROP COLUMN user_id;
+ALTER TABLE announcements DROP COLUMN user_id CASCADE;
 
 DROP TABLE IF EXISTS users;

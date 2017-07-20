@@ -1,1 +1,10 @@
+env:
+  AMBER_ENV=test
+  MICRATE_RUN_UP=true
+  DATABASE_NAME=crystal_ann_test
+  DATABASE_URL=postgres://postgres@localhost/$DATABASE_NAME
+
 language: crystal
+services: postgresql
+before_script:
+  - psql -c "create database $DATABASE_NAME;" -U postgres

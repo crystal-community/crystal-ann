@@ -1,2 +1,14 @@
-pg:
+default: &default
   database: postgresql://localhost/crystal_ann
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
+
+test:
+  database: postgresql://localhost/crystal_ann_test
