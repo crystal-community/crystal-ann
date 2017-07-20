@@ -5,7 +5,7 @@ class ApplicationController < Amber::Controller::Base
   include Helpers::PageTitleHelper
 
   before_action do
-    all { redirect_force_ssl } if SITE.force_ssl
+    all { redirect_force_ssl }
   end
 
   LAYOUT = "application.slang"
@@ -34,7 +34,7 @@ class ApplicationController < Amber::Controller::Base
   end
 
   protected def redirect_force_ssl
-    if request.headers["x-forwarded-proto"]? != "https"
+    if SITE.force_ssl && request.headers["x-forwarded-proto"]? != "https"
       redirect_to "https://#{request.host_with_port}#{request.path}"
     end
   end
