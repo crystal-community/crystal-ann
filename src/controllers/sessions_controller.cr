@@ -19,6 +19,11 @@ class SessionsController < ApplicationController
     redirect_to "/announcements/new"
   end
 
+  def destroy
+    session.delete("user_id")
+    redirect_to "/"
+  end
+
   private def oauth(provider)
     MultiAuth.make provider, "#{SITE.url}/#{provider}/auth"
   end

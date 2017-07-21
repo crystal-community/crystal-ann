@@ -27,6 +27,7 @@ Amber::Server.instance.config do |app|
     get "/=:hashid", AnnouncementController, :expand
     get "/rss", RSSController, :show
     get "/sessions/new", SessionsController, :new
+    delete "/sessions", SessionsController, :destroy
     get "/github/auth", SessionsController, :create
     get "/", AnnouncementController, :index
   end
