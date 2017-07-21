@@ -17,7 +17,7 @@ class AnnouncementController < ApplicationController
       newer, older = announcement.next, announcement.prev
       render("show.slang")
     else
-      redirect_to "/announcements"
+      redirect_to "/"
     end
   end
 
@@ -27,29 +27,33 @@ class AnnouncementController < ApplicationController
   end
 
   def create
-    check_signed_in!
+    return redirect_to("/announcements/new") unless signed_in?
 
     announcement = Announcement.new announcement_params
     announcement.user_id = current_user!.id
 
     if announcement.valid? && announcement.save
       Workers::TweetAnnouncement.new.perform(announcement.id.not_nil!)
-      redirect_to "/announcements"
+      redirect_to "/"
     else
       render("new.slang")
     end
   end
 
   def edit
+    return redirect_to("/") unless signed_in?
+
     announcement = find_announcement
     if announcement && can_update?(announcement)
       render("edit.slang")
     else
-      redirect_to "/announcements"
+      redirect_to "/"
     end
   end
 
   def update
+    return redirect_to("/") unless signed_in?
+
     announcement = find_announcement
     if announcement && can_update?(announcement)
       announcement.set_attributes announcement_params
@@ -59,21 +63,23 @@ class AnnouncementController < ApplicationController
         render("edit.slang")
       end
     else
-      redirect_to "/announcements"
+      redirect_to "/"
     end
   end
 
   def destroy
+    return redirect_to("/") unless signed_in?
+
     announcement = find_announcement
     announcement.destroy if announcement && can_update?(announcement)
-    redirect_to "/announcements"
+    redirect_to "/"
   end
 
   def expand
     if announcement = Announcement.find_by_hashid(params["hashid"])
       redirect_to "/announcements/#{announcement.id}"
     else
-      redirect_to "/announcements"
+      redirect_to "/"
     end
   end
 

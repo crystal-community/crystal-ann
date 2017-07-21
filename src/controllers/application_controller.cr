@@ -25,10 +25,6 @@ class ApplicationController < Amber::Controller::Base
     current_user != nil
   end
 
-  protected def check_signed_in!
-    redirect_to "/" unless signed_in?
-  end
-
   protected def can_update?(announcement)
     current_user.try &.can_update? announcement
   end
