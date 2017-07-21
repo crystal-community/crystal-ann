@@ -12,3 +12,10 @@ Amber::Server.instance.config do |app|
   app.log = ::Logger.new(STDOUT)
   app.log.level = ::Logger::INFO
 end
+
+Amber::Server.instance.session = {
+  :key     => "crystal.ann.session",
+  :store   => :cookie,
+  :expires => 120,
+  :secret  => ENV["AMBER_SESSION_SECRET"]? || "",
+}

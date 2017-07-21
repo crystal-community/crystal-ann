@@ -10,7 +10,8 @@ license: MIT
 
 dependencies:
   amber:
-    github: Amber-Crystal/amber 
+    github: Amber-Crystal/amber
+    branch: master
 
   granite_orm:
     github: kemalyst/granite-orm

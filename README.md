@@ -33,6 +33,8 @@ And set environment variables with `heroku config:set VAR=VAL`:
 
 ```
 AMBER_ENV
+AMBER_SESSION_SECRET
+
 MICRATE_RUN_UP
 REDIS_PROVIDER
 
