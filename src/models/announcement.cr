@@ -47,7 +47,6 @@ class Announcement < Granite::ORM
                  else
                    ["%#{query}%", per_page, (page - 1) * per_page]
                  end
-    puts q
     self.all q, parameters
   end
 
