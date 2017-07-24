@@ -20,7 +20,8 @@ article.hentry
 
     span.tags-links
       i.fa.fa-tag
-      = announcement.typename
+      a href="?type=#{announcement.typename_underscore}"
+        = announcement.typename
 
     - if can_update?(announcement)
       span.actions

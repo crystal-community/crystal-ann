@@ -79,4 +79,34 @@ describe Announcement do
       expect(hashid).to eq "D49Nz"
     end
   end
+
+  describe "#typename_underscore" do
+    it "returns the type with underscores" do
+      expect(announcement(type: 0).typename_underscore).to eq "blog_post"
+      expect(announcement(type: 1).typename_underscore).to eq "project_update"
+      expect(announcement(type: 2).typename_underscore).to eq "conference"
+      expect(announcement(type: 3).typename_underscore).to eq "meetup"
+      expect(announcement(type: 4).typename_underscore).to eq "podcast"
+      expect(announcement(type: 5).typename_underscore).to eq "screencast"
+      expect(announcement(type: 6).typename_underscore).to eq "video"
+      expect(announcement(type: 7).typename_underscore).to eq "other"
+    end
+  end
+
+  describe ".reverse_typename_underscore" do
+    it "returns nil if is invalid" do
+      expect(Announcement.reverse_typename_underscore("foo")).to eq nil
+    end
+
+    it "returns the type given a typename_underscore" do
+      expect(Announcement.reverse_typename_underscore("blog_post")).to eq 0
+      expect(Announcement.reverse_typename_underscore("project_update")).to eq 1
+      expect(Announcement.reverse_typename_underscore("conference")).to eq 2
+      expect(Announcement.reverse_typename_underscore("meetup")).to eq 3
+      expect(Announcement.reverse_typename_underscore("podcast")).to eq 4
+      expect(Announcement.reverse_typename_underscore("screencast")).to eq 5
+      expect(Announcement.reverse_typename_underscore("video")).to eq 6
+      expect(Announcement.reverse_typename_underscore("other")).to eq 7
+    end
+  end
 end

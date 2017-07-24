@@ -36,20 +36,32 @@ class Announcement < Granite::ORM
   validate :description, "is too long",
     ->(this : Announcement) { this.description.to_s.size <= 4000 }
 
-  def self.search(query, per_page = nil, page = 1)
-    self.all %q{
-      WHERE title ILIKE $1 OR description ILIKE $1
+  def self.search(query, per_page = nil, page = 1, type = nil)
+    q = %Q{
+      WHERE (title ILIKE $1 OR description ILIKE $1) #{(type ? "AND type = $4" : "")}
       ORDER BY created_at DESC
       LIMIT $2 OFFSET $3
-    }, ["%#{query}%", per_page, (page - 1) * per_page]
+    }
+    parameters = if type
+                   ["%#{query}%", per_page, (page - 1) * per_page, type]
+                 else
+                   ["%#{query}%", per_page, (page - 1) * per_page]
+                 end
+    puts q
+    self.all q, parameters
   end
 
-  def self.count(query)
+  def self.count(query, type = nil)
+    parameters = if type
+                   ["%#{query}%", type]
+                 else
+                   "%#{query}%"
+                 end
     @@adapter.open do |db|
-      db.scalar(%q{
+      db.scalar(%Q{
         SELECT COUNT(*) FROM announcements
-        WHERE title ILIKE $1 OR description ILIKE $1
-      }, "%#{query}%").as(Int64)
+        WHERE (title ILIKE $1 OR description ILIKE $1) #{(type ? "AND type = $2" : "")}
+      }, parameters).as(Int64)
     end
   end
 
@@ -81,6 +93,16 @@ class Announcement < Granite::ORM
 
   def typename
     TYPES[type]
+  end
+
+  def typename_underscore
+    typename.tr(" ", "").underscore
+  end
+
+  def self.reverse_typename_underscore(typename)
+    index = nil
+    TYPES.each { |i, type| index = i if type.tr(" ", "").underscore == typename }
+    index
   end
 
   def user
