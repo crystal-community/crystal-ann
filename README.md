@@ -1,4 +1,6 @@
 # Crystal [ANN]
+
+[![Join the chat at https://gitter.im/veelenga/crystal-ann](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/veelenga/crystal-ann.svg?branch=master)](https://travis-ci.org/veelenga/crystal-ann)
 [![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](https://github.com/veelenga/crystal-ann)
 [![Gitter](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
