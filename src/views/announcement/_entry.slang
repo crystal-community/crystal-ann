@@ -20,7 +20,7 @@ article.hentry
 
     span.tags-links
       i.fa.fa-tag
-      a href="?type=#{Announcement::TYPES[announcement.type]}"
+      a href="/?type=#{Announcement::TYPES[announcement.type]}"
         = announcement.typename
 
     - if can_update?(announcement)
