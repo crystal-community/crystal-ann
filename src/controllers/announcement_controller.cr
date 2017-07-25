@@ -100,6 +100,6 @@ class AnnouncementController < ApplicationController
   end
 
   private def type_param
-    Announcement.reverse_typename_underscore(params["type"]?.try &.gsub(/[^0-9A-Za-z_\-\s]/, ""))
+    Announcement::TYPES.key(params["type"]?.try &.gsub(/[^0-9A-Za-z_\-\s]/, "")) { nil }
   end
 end

@@ -3,14 +3,14 @@ require "markdown"
 
 class Announcement < Granite::ORM
   TYPES = {
-    0 => "Blog Post",
-    1 => "Project Update",
-    2 => "Conference",
-    3 => "Meetup",
-    4 => "Podcast",
-    5 => "Screencast",
-    6 => "Video",
-    7 => "Other",
+    0 => "blog_post",
+    1 => "project_update",
+    2 => "conference",
+    3 => "meetup",
+    4 => "podcast",
+    5 => "screencast",
+    6 => "video",
+    7 => "other",
   }
 
   adapter pg
@@ -38,28 +38,22 @@ class Announcement < Granite::ORM
 
   def self.search(query, per_page = nil, page = 1, type = nil)
     q = %Q{
-      WHERE (title ILIKE $1 OR description ILIKE $1) #{(type ? "AND type = $4" : "")}
+      WHERE (title ILIKE $1 OR description ILIKE $1) #{"AND type = $4" if type}
       ORDER BY created_at DESC
       LIMIT $2 OFFSET $3
     }
-    parameters = if type
-                   ["%#{query}%", per_page, (page - 1) * per_page, type]
-                 else
-                   ["%#{query}%", per_page, (page - 1) * per_page]
-                 end
+    parameters = ["%#{query}%", per_page, (page - 1) * per_page]
+    parameters << type if type
     self.all q, parameters
   end
 
   def self.count(query, type = nil)
-    parameters = if type
-                   ["%#{query}%", type]
-                 else
-                   "%#{query}%"
-                 end
+    parameters = ["%#{query}%"] of String | Int32
+    parameters << type if type
     @@adapter.open do |db|
       db.scalar(%Q{
         SELECT COUNT(*) FROM announcements
-        WHERE (title ILIKE $1 OR description ILIKE $1) #{(type ? "AND type = $2" : "")}
+        WHERE (title ILIKE $1 OR description ILIKE $1) #{"AND type = $2" if type}
       }, parameters).as(Int64)
     end
   end
@@ -91,17 +85,7 @@ class Announcement < Granite::ORM
   end
 
   def typename
-    TYPES[type]
-  end
-
-  def typename_underscore
-    typename.tr(" ", "").underscore
-  end
-
-  def self.reverse_typename_underscore(typename)
-    index = nil
-    TYPES.each { |i, type| index = i if type.tr(" ", "").underscore == typename }
-    index
+    TYPES[type].split("_").map(&.capitalize).join(" ")
   end
 
   def user
