@@ -37,10 +37,15 @@ describe Announcement do
   end
 
   describe "#typename" do
-    it "returns the name of the type" do
-      Announcement::TYPES.each do |type, name|
-        expect(announcement(type: type).typename).to eq name
-      end
+    it "returns the properly capitalized type name" do
+      expect(announcement(type: 0).typename).to eq "Blog Post"
+      expect(announcement(type: 1).typename).to eq "Project Update"
+      expect(announcement(type: 2).typename).to eq "Conference"
+      expect(announcement(type: 3).typename).to eq "Meetup"
+      expect(announcement(type: 4).typename).to eq "Podcast"
+      expect(announcement(type: 5).typename).to eq "Screencast"
+      expect(announcement(type: 6).typename).to eq "Video"
+      expect(announcement(type: 7).typename).to eq "Other"
     end
 
     it "raises error if type is wrong" do
