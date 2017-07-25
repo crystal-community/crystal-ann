@@ -100,6 +100,6 @@ class AnnouncementController < ApplicationController
   end
 
   private def type_param
-    Announcement::TYPES.key(params["type"]?.try &.gsub(/[^0-9A-Za-z_\-\s]/, "")) { nil }
+    (type = params["type"]?) && Announcement::TYPES.key(type) { -1 }
   end
 end
