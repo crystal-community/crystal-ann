@@ -41,3 +41,7 @@ dependencies:
 development_dependencies:
   spec2:
     github: waterlink/spec2.cr
+
+  webmock:
+    github: manastech/webmock.cr
+    branch: master
