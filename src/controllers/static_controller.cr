@@ -4,6 +4,6 @@ class StaticController < ApplicationController
   end
 
   def index
-    "do nothing"
+    "404 - Page not found"
   end
 end
