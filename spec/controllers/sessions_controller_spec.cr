@@ -61,9 +61,10 @@ describe SessionsController do
       expect(session["user_id"]).to eq u.not_nil!.id.to_s
     end
 
-    it "redirects to root url" do
+    it "redirects to announcements#new" do
       get "/github/auth", body: "code=#{code}"
       expect(response.status_code).to eq 302
+      expect(response).to redirect_to "/announcements/new"
     end
 
     it "can find existed user and update attributes" do
@@ -100,6 +101,7 @@ describe SessionsController do
     it "redirects to root url" do
       delete "/sessions"
       expect(response.status_code).to eq 302
+      expect(response).to redirect_to "/"
     end
   end
 end

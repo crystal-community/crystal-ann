@@ -85,6 +85,11 @@ describe AnnouncementController do
         expect(response.status_code).to eq 302
         expect(Announcement.all.size).to eq 0
       end
+
+      it "redirects to /" do
+        post "/announcements", body: "title=test-title&description=test-description&type=0"
+        expect(response).to redirect_to "/announcements/new"
+      end
     end
   end
 
@@ -93,6 +98,7 @@ describe AnnouncementController do
       it "redirects to root_url" do
         get "/announcements/#{announcement.id}/edit"
         expect(response.status_code).to eq 302
+        expect(response).to redirect_to "/"
       end
     end
 
@@ -113,6 +119,7 @@ describe AnnouncementController do
         it "redirects to root url" do
           get "/announcements/#{announcement.id}/edit"
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
         end
       end
 
@@ -148,6 +155,7 @@ describe AnnouncementController do
       it "redirects to root url" do
         patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params)
         expect(response.status_code).to eq 302
+        expect(response).to redirect_to "/"
       end
 
       it "does not update announcement" do
@@ -171,6 +179,7 @@ describe AnnouncementController do
         it "redirects to announcement#show page if params are valid" do
           patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params)
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/announcements/#{announcement.id}"
         end
 
         it "does not update announcement if params are not valid" do
@@ -201,6 +210,7 @@ describe AnnouncementController do
         it "redirects to root url" do
           patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params)
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
         end
       end
 
@@ -218,6 +228,7 @@ describe AnnouncementController do
         it "redirects to announcement#show page if params are valid" do
           patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params)
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/announcements/#{announcement.id}"
         end
       end
     end
@@ -228,6 +239,7 @@ describe AnnouncementController do
       it "redirects to root url" do
         delete "/announcements/#{announcement.id}"
         expect(response.status_code).to eq 302
+        expect(response).to redirect_to "/"
       end
 
       it "does not delete announcement" do
@@ -248,6 +260,7 @@ describe AnnouncementController do
         it "redirects to root url" do
           delete "/announcements/#{announcement.id}"
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
         end
       end
 
@@ -262,6 +275,7 @@ describe AnnouncementController do
         it "redirects to root url" do
           delete "/announcements/#{announcement.id}"
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
         end
       end
 
@@ -276,6 +290,7 @@ describe AnnouncementController do
         it "redirects to root url" do
           delete "/announcements/#{announcement.id}"
           expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
         end
       end
     end
