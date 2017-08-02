@@ -16,7 +16,8 @@ article.hentry
         span.author.vcard
           a href="https://github.com/#{user.login}" target="_blank"
             i.fa.fa-github
-            = user.login
+            span.fn
+              = user.login
 
     span.tags-links
       i.fa.fa-tag
