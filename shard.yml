@@ -15,7 +15,7 @@ dependencies:
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: ~> 0.6.0
+    version: ~> 0.6.4
  
   pg:
     github: will/crystal-pg
@@ -36,7 +36,6 @@ dependencies:
 
   hashids:
     github: splattael/hashids.cr
-    version: 0.2.1
 
 development_dependencies:
   spec2:

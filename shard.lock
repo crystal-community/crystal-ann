@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: Amber-Crystal/amber
-    commit: f3f9e3905b0c8a3d435109d10a09ceffe134d5f0
+    commit: 323b2c7f20b3b6385697adeabe5038a5e2f69ca2
 
   baked_file_system:
     github: schovi/baked_file_system
@@ -14,7 +14,7 @@ shards:
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.6.2
+    version: 0.6.4
 
   hashids:
     github: splattael/hashids.cr
@@ -46,7 +46,7 @@ shards:
 
   multi_auth:
     github: msa7/multi_auth
-    commit: 83f7c7bf8cbab7d716daf27caffbb5720df0de26
+    commit: 2fc4db9b60e63d535289550c62eab4ece94aaf71
 
   pg:
     github: will/crystal-pg

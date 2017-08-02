@@ -1,6 +1,6 @@
 # Crystal [ANN]
 [![Build Status](https://travis-ci.org/veelenga/crystal-ann.svg?branch=master)](https://travis-ci.org/veelenga/crystal-ann)
-[![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](https://github.com/veelenga/crystal-ann)
+[![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](http://www.ambercr.io/)
 [![Gitter](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Source code for https://crystal-ann.com.
