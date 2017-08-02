@@ -6,6 +6,8 @@
 - action = (announcement.id ? "/announcements/#{ announcement.id.to_s }" : "/announcements")
 
 form action="#{ action }" method="post"
+  == csrf_tag
+
   - if announcement.id
     input type="hidden" name="_method" value="patch"
 

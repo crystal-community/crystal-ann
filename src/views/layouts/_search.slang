@@ -2,4 +2,4 @@
 
 aside.widget.search
   form name="search" action="/"
-    input.search-input name="query" type="text" pattern=".{3,}" placeholder="Search..." value="#{query}"
+    input.search-input name="query" type="text" placeholder="Search..." value="#{query}"
