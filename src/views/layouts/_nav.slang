@@ -14,6 +14,6 @@ nav#site-navigration.main-navigation
         | About
     - if signed_in?
       li
-        a href="/sessions" id="sign-out-btn"
+        a href="/sessions" id="sign-out-btn" csrf-token="#{csrf_token}"
           i.fa.fa-sign-out
           | Sign out

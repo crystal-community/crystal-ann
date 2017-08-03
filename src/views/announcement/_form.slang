@@ -6,6 +6,8 @@
 - action = (announcement.id ? "/announcements/#{ announcement.id.to_s }" : "/announcements")
 
 form action="#{ action }" method="post"
+  == csrf_tag
+
   - if announcement.id
     input type="hidden" name="_method" value="patch"
 
@@ -15,11 +17,12 @@ form action="#{ action }" method="post"
 
   select name="type"
     option value="-1" selected="selected" = "-- select type --"
-    - Announcement::TYPES.each do |type, name|
+    - Announcement::TYPES.each do |type, _|
+      - typename = Announcement.typename type
       - if type == announcement.type
-        option value="#{ type }" selected="selected" = name
+        option value="#{ type }" selected="selected" = typename
       - else
-        option value="#{ type }" = name
+        option value="#{ type }" = typename
 
   div.actions
     button type="submit" Submit

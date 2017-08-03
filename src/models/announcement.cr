@@ -62,6 +62,10 @@ class Announcement < Granite::ORM
     Announcement.all("WHERE created_at > $1 ORDER BY created_at DESC", from)
   end
 
+  def self.typename(type)
+    TYPES[type].split("_").map(&.capitalize).join(" ")
+  end
+
   def next
     Announcement.all("WHERE created_at > $1 ORDER BY created_at LIMIT 1", created_at).first?
   end
@@ -85,7 +89,7 @@ class Announcement < Granite::ORM
   end
 
   def typename
-    TYPES[type].split("_").map(&.capitalize).join(" ")
+    Announcement.typename(type)
   end
 
   def user

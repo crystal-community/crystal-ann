@@ -43,7 +43,7 @@ describe SessionsController do
     end
   end
 
-  describe "POST create" do
+  describe "GET create" do
     before { Announcement.clear; User.clear }
     before { stub_github_authorize_request }
 
@@ -96,6 +96,12 @@ describe SessionsController do
     it "signs out user" do
       delete "/sessions"
       expect(session["user_id"]).to be_nil
+    end
+
+    it "does not sign out user if csrf is invalid" do
+      delete "/sessions", body: "_csrf=invalid-token"
+      expect(response.status_code).to eq 403
+      expect(session["user_id"]).not_to be_nil
     end
 
     it "redirects to root url" do

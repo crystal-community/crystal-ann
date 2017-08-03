@@ -18,13 +18,22 @@ function signoutListener() {
   if (button) {
     button.addEventListener("click", (e) => {
       e.preventDefault();
+
       var form = document.createElement("form");
       form.method = "POST";
       form.action = "/sessions";
+
       var method = document.createElement("input");
       method.name = "_method";
-      method.value = "DELETE";
+      method.value = "delete";
       form.appendChild(method);
+
+      var csrf = document.createElement("input");
+      csrf.type = "hidden";
+      csrf.name = "_csrf";
+      csrf.value = button.getAttribute("csrf-token");
+      form.appendChild(csrf);
+
       document.body.appendChild(form);
       form.submit();
     });
