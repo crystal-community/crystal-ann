@@ -43,7 +43,7 @@ def process_request(request)
   response = HTTP::Server::Response.new(io)
   context = HTTP::Server::Context.new(request, response)
   context.session = Global.session if Global.session
-  context.params["_csrf"] = Amber::Pipe::CSRF.token(context).to_s
+  context.params["_csrf"] ||= Amber::Pipe::CSRF.token(context).to_s
   main_handler = build_main_handler
   main_handler.call context
   response.close

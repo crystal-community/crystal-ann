@@ -77,6 +77,12 @@ describe AnnouncementController do
         post "/announcements", body: "title=test-title"
         expect(Announcement.all.size).to eq 0
       end
+
+      it "does not create an announcement if csrf token is invalid" do
+        post "/announcements", body: "title=test-title&description=test-description&type=0&_csrf=invalid-token"
+        expect(response.status_code).to eq 403
+        expect(Announcement.all.size).to eq 0
+      end
     end
 
     context "when user not signed-in" do
@@ -194,6 +200,15 @@ describe AnnouncementController do
           patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(invalid_params)
           expect(response.status_code).to eq 200
         end
+
+        it "does not update announcement if csrf token is invalid" do
+          patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params) + "&_csrf=invalid-token"
+          expect(response.status_code).to eq 403
+          a = Announcement.find(announcement.try &.id).not_nil!
+          expect(a.title).to eq announcement.title
+          expect(a.description).to eq announcement.description
+          expect(a.type).to eq announcement.type
+        end
       end
 
       context "when user cannot update announcement" do
@@ -261,6 +276,12 @@ describe AnnouncementController do
           delete "/announcements/#{announcement.id}"
           expect(response.status_code).to eq 302
           expect(response).to redirect_to "/"
+        end
+
+        it "does not delete announcement if csrf token is invalid" do
+          delete "/announcements/#{announcement.id}", body: "_csrf=invalid-token"
+          expect(response.status_code).to eq 403
+          expect(Announcement.find announcement.id).not_to be_nil
         end
       end
 
