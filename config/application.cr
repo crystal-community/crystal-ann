@@ -15,7 +15,7 @@ end
 
 Amber::Server.instance.session = {
   :key     => "crystal.ann.session",
-  :store   => :cookie,
+  :store   => :encrypted_cookie,
   :expires => 0,
   :secret  => ENV["AMBER_SESSION_SECRET"]? || "",
 }

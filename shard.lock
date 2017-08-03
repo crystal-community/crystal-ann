@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: Amber-Crystal/amber
-    commit: 323b2c7f20b3b6385697adeabe5038a5e2f69ca2
+    version: 0.1.6
 
   baked_file_system:
     github: schovi/baked_file_system

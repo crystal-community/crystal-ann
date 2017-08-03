@@ -25,7 +25,7 @@ function signoutListener() {
 
       var method = document.createElement("input");
       method.name = "_method";
-      method.value = "DELETE";
+      method.value = "delete";
       form.appendChild(method);
 
       var csrf = document.createElement("input");

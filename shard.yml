@@ -1,8 +1,9 @@
 name: crystal-ann
-version: 0.1.0
+version:
 
 authors:
-  - Amber <contact@ambercr.io>
+  - V. Elenhaupt <velenhaupt@gmail.com>
+  - Hugo Abonizio <hugo_abonizio@hotmail.com>
 
 crystal: 0.23.1
 
@@ -11,7 +12,7 @@ license: MIT
 dependencies:
   amber:
     github: Amber-Crystal/amber
-    branch: master
+    version: 0.1.6
 
   granite_orm:
     github: kemalyst/granite-orm
