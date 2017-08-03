@@ -62,6 +62,29 @@ describe Announcement do
       ann = announcement(description: "<script>console.log('hello')</script>")
       expect(ann.content).to eq "<p>&lt;script>console.log('hello')&lt;/script></p>"
     end
+
+    it "autolinks" do
+      anns = [
+        announcement(description: "http://www.myproj.com/"),
+        announcement(description: "Some new project at http://www.myproj.com/."),
+        announcement(description: "(link: http://www.myproj.com/)."),
+        announcement(description: "# Bigger example\nLorem ipsum http://www.myproj.com/."),
+      ]
+      results = [
+        "<p><a href=\"http://www.myproj.com/\">http://www.myproj.com/</a></p>",
+        "<p>Some new project at <a href=\"http://www.myproj.com/\">http://www.myproj.com/</a>.</p>",
+        "<p>(link: <a href=\"http://www.myproj.com/\">http://www.myproj.com/</a>).</p>",
+        "<h1>Bigger example</h1>\n\n<p>Lorem ipsum <a href=\"http://www.myproj.com/\">http://www.myproj.com/</a>.</p>",
+      ]
+      anns.size.times do |i|
+        expect(anns[i].content).to eq(results[i])
+      end
+    end
+
+    pending "autolink/markdown edge case" do
+      content = "<a href=\"hello\">http://example.com</a>"
+      expect(announcement(description: content).content).to eq content
+    end
   end
 
   describe "#short_path" do

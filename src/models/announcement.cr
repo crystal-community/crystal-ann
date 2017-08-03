@@ -1,5 +1,6 @@
 require "granite_orm/adapter/pg"
 require "markdown"
+require "autolink"
 
 class Announcement < Granite::ORM
   TYPES = {
@@ -97,6 +98,6 @@ class Announcement < Granite::ORM
   end
 
   def content
-    Markdown.to_html(description.not_nil!)
+    Autolink.auto_link(Markdown.to_html(description.not_nil!))
   end
 end
