@@ -4,6 +4,10 @@ shards:
     github: Amber-Crystal/amber
     commit: f3f9e3905b0c8a3d435109d10a09ceffe134d5f0
 
+  autolink:
+    github: hugoabonizio/autolink.cr
+    version: 0.1.1
+
   baked_file_system:
     github: schovi/baked_file_system
     version: 0.9.4
