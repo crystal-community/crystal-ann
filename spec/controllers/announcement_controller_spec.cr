@@ -316,4 +316,28 @@ describe AnnouncementController do
       end
     end
   end
+
+  describe "GET expand" do
+    context "when hashid is valid" do
+      it "redirects to announcement page" do
+        get "/=#{announcement.hashid}"
+        expect(response.status_code).to eq 302
+        expect(response).to redirect_to "/announcements/#{announcement.id}"
+      end
+    end
+
+    context "when hashid is invalid" do
+      it "redirecs to root url if hashid present" do
+        get "/=invalid"
+        expect(response.status_code).to eq 302
+        expect(response).to redirect_to "/"
+      end
+
+      it "returns 404 if hashid is missing" do
+        get "/="
+        expect(response.status_code).to eq 404
+        expect(response).not_to redirect_to "/"
+      end
+    end
+  end
 end
