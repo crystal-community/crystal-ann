@@ -6,7 +6,7 @@ shards:
 
   autolink:
     github: hugoabonizio/autolink.cr
-    version: 0.1.1
+    version: 0.1.2
 
   baked_file_system:
     github: schovi/baked_file_system
