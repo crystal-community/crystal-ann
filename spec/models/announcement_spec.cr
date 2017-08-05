@@ -81,10 +81,14 @@ describe Announcement do
       end
     end
 
-    it "autolink/markdown edge case" do
+    it "autolink/markdown edge cases" do
       content = "<a href=\"hello\">http://example.com</a>"
       expect(announcement(description: content).content)
         .to eq "<p>&lt;a href=\"hello\"><a href=\"http://example.com\">http://example.com</a>&lt;/a></p>"
+
+      content = "<a href=\"http://www.myblog.com\">http://www.myblog.com</a>"
+      expect(announcement(description: content).content)
+        .to eq "<p>&lt;a href=\"http://www.myblog.com\">http://www.myblog.com&lt;/a></p>"
     end
   end
 
