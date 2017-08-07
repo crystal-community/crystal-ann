@@ -42,7 +42,5 @@ function signoutListener() {
 }
 
 function runPrettify() {
-  [].forEach.call(document.querySelectorAll('.entry-content pre'), (pre) => {
-    hljs.highlightBlock(pre);
-  });
+  hljs.initHighlightingOnLoad();
 }
