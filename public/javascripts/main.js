@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   toggleSecondary();
   signoutListener();
+  runPrettify();
 });
 
 function toggleSecondary() {
@@ -38,4 +39,11 @@ function signoutListener() {
       form.submit();
     });
   }
+}
+
+function runPrettify() {
+  [].forEach.call(document.querySelectorAll('.entry-content pre'), (pre) => {
+    pre.className += 'prettyprint';
+  });
+  PR.prettyPrint();
 }

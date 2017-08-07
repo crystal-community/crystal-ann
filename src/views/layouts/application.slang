@@ -35,5 +35,6 @@ html
         == render_template "layouts/_footer.slang"
 
     script src="/javascripts/main.js"
+    script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"
 
     == render_template "layouts/_ga.slang"
