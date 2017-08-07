@@ -8,6 +8,7 @@ html
 
     link rel="stylesheet" href="/stylesheets/main.css"
     link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"
 
   body.home
     div#page.hfeed.site
@@ -35,6 +36,6 @@ html
         == render_template "layouts/_footer.slang"
 
     script src="/javascripts/main.js"
-    script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
 
     == render_template "layouts/_ga.slang"

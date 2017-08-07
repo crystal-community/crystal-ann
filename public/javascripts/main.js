@@ -43,7 +43,6 @@ function signoutListener() {
 
 function runPrettify() {
   [].forEach.call(document.querySelectorAll('.entry-content pre'), (pre) => {
-    pre.className += 'prettyprint';
+    hljs.highlightBlock(pre);
   });
-  PR.prettyPrint();
 }
