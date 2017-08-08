@@ -291,9 +291,8 @@ pre {
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: 0.8em;
+	padding: 0.25em;
 	white-space: pre;
-	white-space: pre-wrap;
 	word-wrap: break-word;
 }
 

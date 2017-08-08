@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   toggleSecondary();
   signoutListener();
+  runPrettify();
 });
 
 function toggleSecondary() {
@@ -38,4 +39,8 @@ function signoutListener() {
       form.submit();
     });
   }
+}
+
+function runPrettify() {
+  hljs.initHighlightingOnLoad();
 }

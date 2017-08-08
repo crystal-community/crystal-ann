@@ -7,6 +7,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
     link rel="stylesheet" href="/stylesheets/main.css"
+    link rel="stylesheet" href="/stylesheets/monokai-sublime.min.css"
     link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 
   body.home
@@ -35,5 +36,6 @@ html
         == render_template "layouts/_footer.slang"
 
     script src="/javascripts/main.js"
+    script src="/javascripts/highlight.pack.js"
 
     == render_template "layouts/_ga.slang"
