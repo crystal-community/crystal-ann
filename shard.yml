@@ -33,7 +33,7 @@ dependencies:
     branch: master
 
   twitter:
-    github: veelenga/twitter.cr
+    github: crystal-announcements/twitter.cr
 
   hashids:
     github: splattael/hashids.cr
