@@ -46,6 +46,23 @@ describe AnnouncementController do
         expect(response.body.includes? a3.typename).to be_false
       end
     end
+
+    context "with user param" do
+      it "can find announcements by user login" do
+        user1 = user(login: "Superman").tap &.save
+        user2 = user(login: "Batman").tap &.save
+
+        a1 = announcement(user1, title: "Announcement1").tap &.save
+        a2 = announcement(user1, title: "Announcement2").tap &.save
+        a3 = announcement(user2, title: "Announcement3").tap &.save
+
+        get "/announcements", body: "user=#{user1.login}"
+
+        expect(response.body.includes? a1.title.to_s).to be_true
+        expect(response.body.includes? a2.title.to_s).to be_true
+        expect(response.body.includes? a3.title.to_s).to be_false
+      end
+    end
   end
 
   describe "GET show" do

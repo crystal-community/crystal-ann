@@ -37,25 +37,26 @@ class Announcement < Granite::ORM
   validate :description, "is too long",
     ->(this : Announcement) { this.description.to_s.size <= 4000 }
 
-  def self.search(query, per_page = nil, page = 1, type = nil)
+  def self.search(query, per_page = nil, page = 1, type = nil, user_id = nil)
     q = %Q{
-      WHERE (title ILIKE $1 OR description ILIKE $1) #{"AND type = $4" if type}
-      ORDER BY created_at DESC
-      LIMIT $2 OFFSET $3
+      WHERE (title ILIKE $1 OR description ILIKE $1)
+        #{"AND type='#{type}'" if type}
+        #{"AND user_id='#{user_id}'" if user_id}
+        ORDER BY created_at DESC
+        LIMIT $2 OFFSET $3
     }
     parameters = ["%#{query}%", per_page, (page - 1) * per_page]
-    parameters << type if type
     self.all q, parameters
   end
 
-  def self.count(query, type = nil)
-    parameters = ["%#{query}%"] of String | Int32
-    parameters << type if type
+  def self.count(query, type = nil, user_id = nil)
     @@adapter.open do |db|
       db.scalar(%Q{
         SELECT COUNT(*) FROM announcements
-        WHERE (title ILIKE $1 OR description ILIKE $1) #{"AND type = $2" if type}
-      }, parameters).as(Int64)
+          WHERE (title ILIKE $1 OR description ILIKE $1)
+          #{"AND type='#{type}'" if type}
+          #{"AND user_id='#{user_id}'" if user_id}
+      }, "%#{query}%").as(Int64)
     end
   end
 

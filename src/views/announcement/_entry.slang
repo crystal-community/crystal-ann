@@ -14,10 +14,10 @@ article.hentry
     - if user = announcement.user
       span.byline
         span.author.vcard
-          a href="https://github.com/#{user.login}" target="_blank"
-            i.fa.fa-github
+          i.fa.fa-user
+          a href="/users/#{user.login}"
             span.fn
-              = user.login
+              = user.name
 
     span.tags-links
       i.fa.fa-tag
