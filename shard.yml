@@ -39,7 +39,7 @@ dependencies:
     github: splattael/hashids.cr
 
   autolink:
-    github: hugoabonizio/autolink.cr
+    github: crystal-announcements/autolink.cr
     version: 0.1.3
 
 development_dependencies:
