@@ -6,4 +6,12 @@ class UserController < ApplicationController
       redirect_to "/"
     end
   end
+
+  def me
+    if user = current_user
+      render "show.slang"
+    else
+      redirect_to "/"
+    end
+  end
 end

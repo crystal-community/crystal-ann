@@ -12,8 +12,3 @@ nav#site-navigration.main-navigation
       a href="/about"
         i.fa.fa-info-circle
         | About
-    - if signed_in?
-      li
-        a href="/sessions" id="sign-out-btn" csrf-token="#{csrf_token}"
-          i.fa.fa-sign-out
-          | Sign out
