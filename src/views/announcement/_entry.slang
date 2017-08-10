@@ -21,7 +21,7 @@ article.hentry
 
     span.tags-links
       i.fa.fa-tag
-      a href="/?type=#{Announcement::TYPES[announcement.type]}"
+      a href="/?#{to_query type: Announcement::TYPES[announcement.type], page: 1}"
         = announcement.typename
 
     - if can_update?(announcement)
