@@ -3,12 +3,12 @@ nav#social-navigation.social-navigation
     ul#menu-social-links.menu
       li
         a href="https://twitter.com/crystallang_ann" target="_blank"
-          i.fa.fa-twitter.fa-3x
+          i.fa.fa-twitter.fa-2x
 
       li
         a href="https://github.com/crystal-announcements/crystal-ann" target="_blank"
-          i.fa.fa-github.fa-3x
+          i.fa.fa-github.fa-2x
 
       li
         a href="/rss"
-          i.fa.fa-rss.fa-3x
+          i.fa.fa-rss.fa-2x

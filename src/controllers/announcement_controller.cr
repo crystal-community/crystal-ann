@@ -5,10 +5,10 @@ class AnnouncementController < ApplicationController
   PER_PAGE = 10
 
   def index
-    query, current_page, type = query_param, page_param, type_param
-    total_pages = Announcement.count(query, type).fdiv(PER_PAGE).ceil.to_i
+    query, current_page, type, user_id = query_param, page_param, type_param, user_id_param
+    total_pages = Announcement.count(query, type, user_id).fdiv(PER_PAGE).ceil.to_i
 
-    announcements = Announcement.search(query, per_page: PER_PAGE, page: current_page, type: type)
+    announcements = Announcement.search(query, per_page: PER_PAGE, page: current_page, type: type, user_id: user_id)
     render("index.slang")
   end
 
@@ -101,5 +101,9 @@ class AnnouncementController < ApplicationController
 
   private def type_param
     (type = params["type"]?) && Announcement::TYPES.key(type) { -1 }
+  end
+
+  private def user_id_param
+    User.find_by_login(params["user"]?).try(&.id)
   end
 end

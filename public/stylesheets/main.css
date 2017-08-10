@@ -1643,17 +1643,14 @@ a.post-thumbnail:focus {
 }
 
 .author-info {
-	border-top: 1px solid #eaeaea;
-	border-top: 1px solid rgba(51, 51, 51, 0.1);
 	margin: 0 3.6923%;
-	padding: 3.6923% 0;
 }
 
 .author-info .avatar {
 	float: left;
-	height: 36px;
-	margin: 0 1.6em 1.6em 0;
-	width: 36px;
+	height: 120px;
+	margin: 0 1.6em 0 0;
+	width: 120px;
 }
 
 .author-heading {
@@ -1668,6 +1665,8 @@ a.post-thumbnail:focus {
 }
 
 .author-title {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
 	clear: none;
 }
 
@@ -1688,7 +1687,7 @@ a.post-thumbnail:focus {
 }
 
 .author-description a {
-	border-bottom: 1px solid #333;
+	border-bottom: 0;
 }
 
 .author-description a:hover,
@@ -2211,7 +2210,6 @@ a.post-thumbnail:focus {
 
 .site-info a {
 	border-bottom: 1px solid transparent;
-	color: #707070;
 	color: rgba(51, 51, 51, 0.7);
 }
 
@@ -2663,7 +2661,7 @@ p > video {
 	.pagination {
 		border-top: 0;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-		margin: 3.6923% 7.6923% 0;
+		margin: 3.6923% 3.6923% 0;
 		padding: 0;
 	}
 
@@ -3142,15 +3140,10 @@ p > video {
 		top: 2px;
 	}
 
-	.author-info {
-		margin: 0 9.0909%;
-		padding: 9.0909% 0;
-	}
-
 	.author-info .avatar {
-		height: 42px;
-		margin: 0 1.6471em 1.6471em 0;
-		width: 42px;
+		height: 180px;
+		margin: 0 1.6471em 0 0;
+		width: 180px;
 	}
 
 	.author-link:after {
@@ -3714,9 +3707,9 @@ p > video {
 	}
 
 	.author-info .avatar {
-		height: 56px;
-		margin: 0 1.6842em 1.6842em 0;
-		width: 56px;
+		height: 180px;
+		margin: 0 1.6842em 0 0;
+		width: 180px;
 	}
 
 	.author-link:after {
@@ -4016,7 +4009,7 @@ p > video {
 	.main-navigation {
 		font-size: 12px;
 		font-size: 1.2rem;
-		margin: 0 20% 20%;
+		margin: 0 20% 15%;
 	}
 
 	.main-navigation a {
@@ -4053,7 +4046,7 @@ p > video {
 	}
 
 	.social-navigation li {
-		width: 25%;
+		width: 20%;
 	}
 
 	.social-navigation a {
@@ -4100,7 +4093,7 @@ p > video {
 	}
 
 	.pagination {
-		margin: 8.333% 8.333% 0;
+		margin: 3.333% 8.333% 0;
 	}
 
 	.pagination .nav-links {
@@ -4167,7 +4160,7 @@ p > video {
 	.site-header {
 		background-color: transparent;
 		border-bottom: 0;
-		margin: 20% 0;
+		margin: 15% 0;
 		padding: 0 20%;
 	}
 
@@ -4190,7 +4183,7 @@ p > video {
 	.widget {
 		font-size: 12px;
 		font-size: 1.2rem;
-		margin: 0 0 20%;
+		margin: 0 0 15%;
 		padding: 0 20%;
 	}
 
@@ -4381,14 +4374,14 @@ p > video {
 	}
 
 	.author-info {
-		margin: 0 10%;
-		padding: 10% 0;
+		margin: 0 0;
+		padding: 0 0;
 	}
 
 	.author-info .avatar {
-		height: 36px;
-		margin: 0 1.5em 1.5em 0;
-		width: 36px;
+		height: 180px;
+		margin: 0 1.5em 0 0;
+		width: 180px;
 	}
 
 	.author-link:after {
@@ -4706,7 +4699,7 @@ p > video {
 	}
 
 	.social-navigation li {
-		width: 20%;
+		width: 25%;
 	}
 
 	.social-navigation a {
@@ -4958,9 +4951,9 @@ p > video {
 	}
 
 	.author-info .avatar {
-		height: 42px;
-		margin: 0 1.6471em 1.6471em 0;
-		width: 42px;
+		height: 180px;
+		margin: 0 1.6471em 0 0;
+		width: 180px;
 	}
 
 	.author-link:after {
@@ -5511,9 +5504,9 @@ p > video {
 	}
 
 	.author-info .avatar {
-		height: 56px;
-		margin: 0 1.6842em 1.6842em 0;
-		width: 56px;
+		height: 180px;
+		margin: 0 1.6842em 0 0;
+		width: 180px;
 	}
 
 	.author-link:after {

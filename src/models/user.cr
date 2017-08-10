@@ -23,7 +23,23 @@ class User < Granite::ORM
     role == "admin"
   end
 
+  def avatar_url
+    "#{github_url}.png"
+  end
+
+  def github_url
+    "https://github.com/#{login}"
+  end
+
+  def total_announcements
+    Announcement.count(nil, user_id: id)
+  end
+
   def self.find_by_uid_and_provider(uid, provider)
     User.all("WHERE uid = $1 AND provider = $2 LIMIT 1", [uid, provider]).first?
+  end
+
+  def self.find_by_login(login)
+    User.all("WHERE login = $1 LIMIT 1", login).first?
   end
 end

@@ -28,6 +28,8 @@ Amber::Server.instance.config do |app|
     get "/sessions/new", SessionsController, :new
     delete "/sessions", SessionsController, :destroy
     get "/github/auth", SessionsController, :create
+    get "/me", UserController, :me
+    get "/users/:login", UserController, :show
     get "/", AnnouncementController, :index
   end
 end
