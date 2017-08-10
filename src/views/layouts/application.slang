@@ -24,10 +24,10 @@ html
         div.secondary
           div
             == render_template "layouts/_nav.slang"
-            == render_template "layouts/_social_nav.slang"
-            == render_template "layouts/_search.slang"
             - if signed_in?
               == render_template "layouts/_profile.slang"
+            == render_template "layouts/_search.slang"
+            == render_template "layouts/_social_nav.slang"
 
       div#content.site-content
         div#primary.content-area
