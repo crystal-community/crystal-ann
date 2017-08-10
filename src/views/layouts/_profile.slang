@@ -1,7 +1,7 @@
 aside.widget.widget_meta
   h2.widget-title
     a href="/me"
-      img.avatar width=30 src=current_user!.avatar_url
+      img.avatar width=45 src=current_user!.avatar_url
       = current_user!.name
 
   ul

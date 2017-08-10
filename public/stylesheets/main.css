@@ -4009,7 +4009,7 @@ p > video {
 	.main-navigation {
 		font-size: 12px;
 		font-size: 1.2rem;
-		margin: 0 20% 20%;
+		margin: 0 20% 15%;
 	}
 
 	.main-navigation a {
@@ -4160,7 +4160,7 @@ p > video {
 	.site-header {
 		background-color: transparent;
 		border-bottom: 0;
-		margin: 20% 0;
+		margin: 15% 0;
 		padding: 0 20%;
 	}
 
