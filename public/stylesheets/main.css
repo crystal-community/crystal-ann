@@ -2229,6 +2229,8 @@ a.post-thumbnail:focus {
 
 .site .avatar {
 	border-radius: 50%;
+	width: 45px;
+	height: 45px;
 }
 
 .page-content img.wp-smiley,
