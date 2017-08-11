@@ -23,8 +23,8 @@ class User < Granite::ORM
     role == "admin"
   end
 
-  def avatar_url
-    "#{github_url}.png"
+  def avatar_url(size : Int32 = 400)
+    "#{github_url}.png?s=#{size}"
   end
 
   def github_url
