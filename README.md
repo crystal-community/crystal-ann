@@ -28,7 +28,7 @@ $ MICRATE_RUN_UP=true crystal spec
 
 ```
 $ heroku create app-name --buildpack https://github.com/crystal-lang/heroku-buildpack-crystal.git
-$ heroku buildpacks:add https://github.com/crystal-announcements/heroku-buildpack-sidekiq.cr
+$ heroku buildpacks:add https://github.com/veelenga/heroku-buildpack-sidekiq.cr
 $ git push heroku master
 ```
 

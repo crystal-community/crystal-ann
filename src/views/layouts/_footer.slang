@@ -8,7 +8,7 @@ div.site-info
     a href="/about" = "About"
     a href="/rss" = "RSS"
     a href="https://twitter.com/crystallang_ann" target="_blank" = "Twitter"
-    a href="https://github.com/crystal-announcements/crystal-ann" target="_blank" = "Github"
+    a href="https://github.com/crystal-community/crystal-ann" target="_blank" = "Github"
 
   div.footer-block
     h3 = "Crystal Language"
