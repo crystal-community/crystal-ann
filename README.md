@@ -1,5 +1,5 @@
 # Crystal [ANN]
-[![Build Status](https://travis-ci.org/crystal-announcements/crystal-ann.svg?branch=master)](https://travis-ci.org/crystal-announcements/crystal-ann)
+[![Build Status](https://travis-ci.org/crystal-community/crystal-ann.svg?branch=master)](https://travis-ci.org/crystal-community/crystal-ann)
 [![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](http://www.ambercr.io/)
 [![Gitter](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -28,7 +28,7 @@ $ MICRATE_RUN_UP=true crystal spec
 
 ```
 $ heroku create app-name --buildpack https://github.com/crystal-lang/heroku-buildpack-crystal.git
-$ heroku buildpacks:add https://github.com/crystal-announcements/heroku-buildpack-sidekiq.cr
+$ heroku buildpacks:add https://github.com/veelenga/heroku-buildpack-sidekiq.cr
 $ git push heroku master
 ```
 

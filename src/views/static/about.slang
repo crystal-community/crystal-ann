@@ -50,6 +50,6 @@ div.page-content
           a href="https://twitter.com/crystallang_ann" target="_blank" = "Twitter"
       li
         | Give it a star, report an issue or propose a change on
-          a href="https://github.com/crystal-announcements/crystal-ann" target="_blank" = "Github"
+          a href="https://github.com/crystal-community/crystal-ann" target="_blank" = "Github"
       li
         | Love Crystal ;)

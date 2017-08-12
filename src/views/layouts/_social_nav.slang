@@ -6,7 +6,7 @@ nav#social-navigation.social-navigation
           i.fa.fa-twitter.fa-2x
 
       li
-        a href="https://github.com/crystal-announcements/crystal-ann" target="_blank"
+        a href="https://github.com/crystal-community/crystal-ann" target="_blank"
           i.fa.fa-github.fa-2x
 
       li
