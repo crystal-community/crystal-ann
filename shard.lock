@@ -5,7 +5,7 @@ shards:
     version: 0.1.6
 
   autolink:
-    github: crystal-announcements/autolink.cr
+    github: crystal-community/autolink.cr
     version: 0.1.3
 
   baked_file_system:
@@ -81,7 +81,7 @@ shards:
     version: 0.11.0
 
   twitter:
-    github: crystal-announcements/twitter.cr
+    github: crystal-community/twitter.cr
     commit: 8008e54c24a715b933b64e974fefa527e769a189
 
   webmock:
