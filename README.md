@@ -49,3 +49,8 @@ TWITTER_CONSUMER_SECRET
 TWITTER_ACCESS_TOKEN
 TWITTER_ACCESS_TOKEN_SECRET
 ```
+
+## Contributors
+
+* [veelenga](https://github.com/veelenga) V. Elenhaupt - creator, maintainer
+* [hugoabonizio](https://github.com/hugoabonizio) Hugo Abonizio - contributor, maintainer
