@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: Amber-Crystal/amber
-    version: 0.1.6
+    version: 0.2.6
 
   autolink:
     github: crystal-community/autolink.cr
@@ -11,6 +11,14 @@ shards:
   baked_file_system:
     github: schovi/baked_file_system
     version: 0.9.4
+
+  callback:
+    github: mosop/callback
+    version: 0.5.1
+
+  cli:
+    github: mosop/cli
+    version: 0.5.2
 
   db:
     github: crystal-lang/crystal-db
@@ -24,6 +32,10 @@ shards:
     github: splattael/hashids.cr
     version: 0.2.1
 
+  icr:
+    github: TechMagister/crystal-icr
+    commit: b28bb938cc9e9e439424217c074a9168d253ba4b
+
   kemal:
     github: kemalcr/kemal
     version: 0.19.0
@@ -34,7 +46,7 @@ shards:
 
   kemal-session:
     github: kemalcr/kemal-session
-    commit: 5cb3b5b207db92852651a7b7ec4f95d6478f8580
+    commit: ec08bfe302d6ddbd1b33c5283d56a8b496cdb276
 
   kemalyst-validators:
     github: kemalyst/kemalyst-validators
@@ -52,6 +64,14 @@ shards:
     github: msa7/multi_auth
     commit: 2fc4db9b60e63d535289550c62eab4ece94aaf71
 
+  mysql:
+    github: crystal-lang/crystal-mysql
+    version: 0.3.2
+
+  optarg:
+    github: mosop/optarg
+    version: 0.4.4
+
   pg:
     github: will/crystal-pg
     version: 0.13.3
@@ -68,6 +88,14 @@ shards:
     github: stefanwille/crystal-redis
     version: 1.8.0
 
+  sentry:
+    github: TechMagister/sentry
+    commit: a78129ec1e66aa24c91b93199ea187e4793c8d58
+
+  shell-table:
+    github: jwaldrip/shell-table.cr
+    version: 0.9.1
+
   sidekiq:
     github: mperham/sidekiq.cr
     commit: d91d68f8064ea83d252a4002cf492f65516c7a70
@@ -80,8 +108,24 @@ shards:
     github: waterlink/spec2.cr
     version: 0.11.0
 
+  spinner:
+    github: elorest/spinner
+    version: 0.1.1
+
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+    version: 0.8.2
+
+  string_inflection:
+    github: mosop/string_inflection
+    version: 0.2.1
+
+  teeplate:
+    github: mosop/teeplate
+    version: 0.4.5
+
   twitter:
-    github: crystal-community/twitter.cr
+    github: veelenga/twitter.cr
     commit: 8008e54c24a715b933b64e974fefa527e769a189
 
   webmock:
