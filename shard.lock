@@ -18,7 +18,7 @@ shards:
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.6.4
+    version: 0.7.2
 
   hashids:
     github: splattael/hashids.cr
@@ -34,11 +34,7 @@ shards:
 
   kemal-session:
     github: kemalcr/kemal-session
-    commit: 5cb3b5b207db92852651a7b7ec4f95d6478f8580
-
-  kemalyst-validators:
-    github: kemalyst/kemalyst-validators
-    version: 0.2.0
+    commit: ec08bfe302d6ddbd1b33c5283d56a8b496cdb276
 
   kilt:
     github: jeromegn/kilt
@@ -81,7 +77,7 @@ shards:
     version: 0.11.0
 
   twitter:
-    github: crystal-community/twitter.cr
+    github: veelenga/twitter.cr
     commit: 8008e54c24a715b933b64e974fefa527e769a189
 
   webmock:

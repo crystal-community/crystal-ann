@@ -2,7 +2,7 @@ require "granite_orm/adapter/pg"
 require "markdown"
 require "autolink"
 
-class Announcement < Granite::ORM
+class Announcement < Granite::ORM::Base
   TYPES = {
     0 => "blog_post",
     1 => "project_update",
