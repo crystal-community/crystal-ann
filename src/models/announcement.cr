@@ -1,8 +1,11 @@
 require "granite_orm/adapter/pg"
 require "markdown"
 require "autolink"
+require "../helpers/*"
 
 class Announcement < Granite::ORM
+  include Helpers::TimeAgoHelper
+
   TYPES = {
     0 => "blog_post",
     1 => "project_update",
@@ -100,5 +103,9 @@ class Announcement < Granite::ORM
 
   def content
     Autolink.auto_link(Markdown.to_html(description.not_nil!))
+  end
+
+  def time_ago
+    time_ago_in_words(created_at)
   end
 end
