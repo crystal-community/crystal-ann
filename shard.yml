@@ -34,7 +34,7 @@ dependencies:
 
   twitter-crystal:
     github: sferik/twitter-crystal
-    branch: master
+    version: 0.2.0
 
   hashids:
     github: splattael/hashids.cr

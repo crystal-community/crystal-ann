@@ -122,7 +122,7 @@ shards:
 
   twitter-crystal:
     github: sferik/twitter-crystal
-    commit: e2f61b387eb62f44dda769c341970e5173175795
+    version: 0.2.0
 
   webmock:
     github: manastech/webmock.cr
