@@ -3,7 +3,7 @@ require "markdown"
 require "autolink"
 require "../helpers/*"
 
-class Announcement < Granite::ORM
+class Announcement < Granite::ORM::Base
   include Helpers::TimeAgoHelper
 
   TYPES = {

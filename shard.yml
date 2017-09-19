@@ -11,12 +11,12 @@ license: MIT
 
 dependencies:
   amber:
-    github: Amber-Crystal/amber
-    version: 0.1.6
+    github: amberframework/amber
+    version: 0.2.6
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: ~> 0.6.4
+    version: 0.7.2
  
   pg:
     github: will/crystal-pg

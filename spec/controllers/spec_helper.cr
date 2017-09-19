@@ -8,10 +8,6 @@ class Global
   @@session : Amber::Router::Session::AbstractStore?
   @@cookies : Amber::Router::Cookies::Store?
 
-  KEY_GENERATOR = Amber::Support::CachingKeyGenerator.new(
-    Amber::Support::KeyGenerator.new("secret", 1)
-  )
-
   def self.response=(@@response)
   end
 
@@ -20,7 +16,7 @@ class Global
   end
 
   def self.cookies(headers = HTTP::Headers.new)
-    @@cookies = Amber::Router::Cookies::Store.new(KEY_GENERATOR)
+    @@cookies = Amber::Router::Cookies::Store.new
     @@cookies.try &.update(Amber::Router::Cookies::Store.from_headers(headers))
     @@cookies.not_nil!
   end
@@ -53,7 +49,7 @@ def process_request(request)
 end
 
 def build_main_handler
-  amber = Amber::Server.instance
+  amber = Amber::Server.settings
   amber.handler.prepare_pipelines
   amber.handler
 end

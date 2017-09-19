@@ -21,7 +21,7 @@ div.page-content
 
   p
     | It is built with
-    a href="https://www.ambercr.io/" target="_blank" = "Amber Web Framework"
+    a href="https://amberframework.org/" target="_blank" = "Amber Web Framework"
     | and itself is a great example of Crystal's awesomeness.
 
   h2 Why should I post my stuff here ?
