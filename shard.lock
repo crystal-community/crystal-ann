@@ -26,7 +26,7 @@ shards:
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.6.4
+    version: 0.7.2
 
   hashids:
     github: splattael/hashids.cr
@@ -47,10 +47,6 @@ shards:
   kemal-session:
     github: kemalcr/kemal-session
     commit: ec08bfe302d6ddbd1b33c5283d56a8b496cdb276
-
-  kemalyst-validators:
-    github: kemalyst/kemalyst-validators
-    version: 0.2.0
 
   kilt:
     github: jeromegn/kilt
