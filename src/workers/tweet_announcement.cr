@@ -1,5 +1,5 @@
 require "sidekiq"
-require "twitter"
+require "twitter-crystal"
 require "../models/announcement"
 
 module Workers
@@ -23,7 +23,7 @@ module Workers
     def tweet(announcement)
       logger.info "Tweeting Announcement ##{announcement.id}"
       status = tweet_template announcement
-      twitter_client.post("/1.1/statuses/update.json", {"status" => status})
+      twitter_client.update(status)
     rescue e
       logger.error "Unable to tweet Announcement ##{announcement.id} (#{status})"
       logger.error "Reason: #{e.message}"

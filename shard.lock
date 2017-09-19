@@ -120,9 +120,9 @@ shards:
     github: mosop/teeplate
     version: 0.4.5
 
-  twitter:
-    github: veelenga/twitter.cr
-    commit: 8008e54c24a715b933b64e974fefa527e769a189
+  twitter-crystal:
+    github: sferik/twitter-crystal
+    commit: e2f61b387eb62f44dda769c341970e5173175795
 
   webmock:
     github: manastech/webmock.cr

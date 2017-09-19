@@ -32,8 +32,9 @@ dependencies:
     github: mperham/sidekiq.cr
     branch: master
 
-  twitter:
-    github: veelenga/twitter.cr
+  twitter-crystal:
+    github: sferik/twitter-crystal
+    branch: master
 
   hashids:
     github: splattael/hashids.cr
