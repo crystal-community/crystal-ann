@@ -10,19 +10,27 @@ module Helpers::TimeAgoHelper
     when 1.minute..2.minutes
       "a minute ago"
     when 2.minutes..1.hour
-      "#{(diff / 60).to_i} minutes ago"
+      "#{diff.minutes} minutes ago"
     when 1.hour..2.hours
       "an hour ago"
     when 2.hours..1.day
-      "#{((diff / 60) / 60).to_i} hours ago"
+      "#{diff.hours} hours ago"
     when 1.day..2.days
       "a day ago"
     when 2.days..1.week
-      "#{((diff) / (60 * 60 * 24)).to_i} days ago"
+      "#{diff.days} days ago"
     when 1.week..2.weeks
       "a week ago"
+    when 2.weeks..4.weeks
+      "#{diff.total_weeks.to_i} weeks ago"
+    when 4.weeks..8.weeks
+      "a month ago"
+    when 8.weeks..52.weeks
+      "#{(diff.total_weeks.to_i / 4)} months ago"
+    when 52.weeks..104.weeks
+      "a year ago"
     else
-      "#{((diff) / (60 * 60 * 24 * 7)).to_i} weeks ago"
+      "#{(diff.total_weeks.to_i / (4 * 12))} years ago"
     end
   end
 end

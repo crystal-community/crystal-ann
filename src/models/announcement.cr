@@ -4,8 +4,6 @@ require "autolink"
 require "../helpers/*"
 
 class Announcement < Granite::ORM::Base
-  include Helpers::TimeAgoHelper
-
   TYPES = {
     0 => "blog_post",
     1 => "project_update",
