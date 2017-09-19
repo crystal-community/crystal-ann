@@ -104,8 +104,4 @@ class Announcement < Granite::ORM::Base
   def content
     Autolink.auto_link(Markdown.to_html(description.not_nil!))
   end
-
-  def time_ago
-    time_ago_in_words(created_at)
-  end
 end

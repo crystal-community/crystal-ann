@@ -2,7 +2,7 @@ require "../spec_helper"
 require "../../src/helpers/time_ago_helper"
 
 describe Helpers::TimeAgoHelper do
-  describe "#time_ago_in_words" do
+  describe ".time_ago_in_words" do
     it "transforms time interval into words" do
       expectations = {
         1.second.ago   => "just now",
@@ -19,7 +19,7 @@ describe Helpers::TimeAgoHelper do
         2.weeks.ago    => "2 weeks ago",
         6.weeks.ago    => "6 weeks ago",
       }
-      expectations.each do |(date, result)|
+      expectations.each do |date, result|
         expect(Helpers::TimeAgoHelper.time_ago_in_words(date)).to eq result
       end
     end

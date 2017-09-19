@@ -2,7 +2,7 @@ module Helpers::TimeAgoHelper
   extend self
 
   def time_ago_in_words(time)
-    diff = (Time.now - time.not_nil!)
+    diff = Time.now - time
 
     case diff
     when 0.seconds..1.minute
