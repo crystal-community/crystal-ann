@@ -1,6 +1,6 @@
 require "granite_orm/adapter/pg"
 
-class User < Granite::ORM
+class User < Granite::ORM::Base
   adapter pg
 
   # id : Int64 primary key is created for you
