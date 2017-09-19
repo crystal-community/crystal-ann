@@ -1,7 +1,6 @@
 require "granite_orm/adapter/pg"
 require "markdown"
 require "autolink"
-require "../helpers/*"
 
 class Announcement < Granite::ORM::Base
   TYPES = {
