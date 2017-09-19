@@ -1,7 +1,7 @@
 version: 1.0
 shards:
   amber:
-    github: Amber-Crystal/amber
+    github: amberframework/amber
     version: 0.2.6
 
   autolink:
