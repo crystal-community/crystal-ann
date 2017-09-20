@@ -6,12 +6,6 @@ article.hentry
   div.entry-content == announcement.content
 
   footer.entry-footer
-    span.posted-on
-      time.entry-date.published.updated
-        i.fa.fa-calendar
-        a href="/announcements/#{ announcement.id }" title="#{announcement.created_at.try &.to_s "%b %d, %Y"}"
-          = time_ago_in_words(announcement.created_at.not_nil!)
-
     - if user = announcement.user
       span.byline
         span.author.vcard
@@ -24,6 +18,12 @@ article.hentry
       i.fa.fa-tag
       a href="/?#{to_query type: Announcement::TYPES[announcement.type], page: 1}"
         = announcement.typename
+
+    span.posted-on
+      time.entry-date.published.updated
+        i.fa.fa-clock-o
+        a href="/announcements/#{ announcement.id }" title="#{announcement.created_at.try &.to_s "%b %d, %Y"}"
+          = time_ago_in_words(announcement.created_at.not_nil!)
 
     - if can_update?(announcement)
       span.actions
