@@ -1,8 +1,7 @@
-require "../helpers/*"
-
 class ApplicationController < Amber::Controller::Base
   include Helpers::QueryHelper
   include Helpers::PageTitleHelper
+  include Helpers::TimeAgoHelper
 
   before_action do
     all { redirect_force_ssl }

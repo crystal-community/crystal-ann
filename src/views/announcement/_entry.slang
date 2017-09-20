@@ -9,7 +9,8 @@ article.hentry
     span.posted-on
       time.entry-date.published.updated
         i.fa.fa-calendar
-        = announcement.created_at.try &.to_s "%b %d, %Y"
+        a href="/announcements/#{ announcement.id }" title="#{announcement.created_at.try &.to_s "%b %d, %Y"}"
+          = time_ago_in_words(announcement.created_at.not_nil!)
 
     - if user = announcement.user
       span.byline
