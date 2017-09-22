@@ -6,18 +6,18 @@ article.hentry
   div.entry-content == announcement.content
 
   footer.entry-footer
+    span.tags-links
+      i.fa.fa-tag
+      a href="/?#{to_query type: Announcement::TYPES[announcement.type], page: 1}"
+        = announcement.typename
+
     - if user = announcement.user
       span.byline
         span.author.vcard
           i.fa.fa-user
           a href="/users/#{user.login}"
             span.fn
-              = user.name
-
-    span.tags-links
-      i.fa.fa-tag
-      a href="/?#{to_query type: Announcement::TYPES[announcement.type], page: 1}"
-        = announcement.typename
+              = user.login
 
     span.posted-on
       time.entry-date.published.updated
