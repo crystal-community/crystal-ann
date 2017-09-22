@@ -65,7 +65,7 @@ class Announcement < Granite::ORM::Base
   end
 
   def self.typename(type)
-    TYPES[type].split("_").map(&.capitalize).join(" ")
+    TYPES[type].split("_").join(" ").capitalize
   end
 
   def next
