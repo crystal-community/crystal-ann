@@ -10,10 +10,6 @@ crystal: 0.23.1
 license: MIT
 
 dependencies:
-  amber:
-    github: amberframework/amber
-    version: 0.2.6
-
   granite_orm:
     github: kemalyst/granite-orm
     version: 0.7.2
@@ -31,6 +27,10 @@ dependencies:
   sidekiq:
     github: mperham/sidekiq.cr
     branch: master
+
+  amber:
+    github: amberframework/amber
+    version: 0.2.6
 
   twitter-crystal:
     github: sferik/twitter-crystal
