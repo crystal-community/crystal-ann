@@ -6,20 +6,42 @@
 
 Source code for https://crystal-ann.com.
 
-## Develop
+## Setup
 
-Create a pg database called `crystal_ann`. Then:
+1. [Install Crystal](https://crystal-lang.org/docs/installation/index.html)
+2. [Install Amber Framework](https://docs.amberframework.org/getting-started/Installation/)
+3. [Install Postgres](http://postgresguide.com/setup/install.html)
+4. Create `crystal_ann` and `crystal_ann_test` pg databases
+
+## Development
+
+1. Install project dependencies:
 
 ```
-$ shards update
+$ crystal deps
+```
+
+2. Run database migrations:
+
+```
 $ amber migrate up
+```
+
+3. Create seed data:
+
+```
 $ crystal db/seed.cr
+```
+
+4. Start app and watch for source changes:
+
+```
 $ amber watch
 ```
 
-## Test
+## Testing
 
-Create a pg database called `crystal_ann_test`. Then:
+Migrate test database and run specs:
 
 ```
 $ MICRATE_RUN_UP=true crystal spec
