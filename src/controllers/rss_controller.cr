@@ -1,4 +1,6 @@
 class RSSController < Amber::Controller::Base
+  include Helpers::TimeAgoHelper
+
   def show
     announcements = Announcement.newest
 

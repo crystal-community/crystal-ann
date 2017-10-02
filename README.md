@@ -77,4 +77,5 @@ TWITTER_ACCESS_TOKEN_SECRET
 
 * [veelenga](https://github.com/veelenga) V. Elenhaupt - creator, maintainer
 * [hugoabonizio](https://github.com/hugoabonizio) Hugo Abonizio - contributor, maintainer
+* [janczer](https://github.com/janczer) Janczer - contributor
 * [lex111](https://github.com/lex111) Alexey Pyltsyn - contributor
