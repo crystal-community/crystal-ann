@@ -25,6 +25,10 @@ article.hentry
         a href="/announcements/#{ announcement.id }" title="#{announcement.created_at.try &.to_s "%b %d, %Y"}"
           = time_ago_in_words(announcement.created_at.not_nil!)
 
+    a href="https://twitter.com/share?text=#{announcement.title}&url=#{SITE.url}#{announcement.short_path}&via=crystallang_ann&related=crystallang_ann" target="_blank"
+      i.fa.fa-retweet
+      = "Retweet"
+
     - if can_update?(announcement)
       span.actions
         a href="/announcements/#{ announcement.id }/edit"
