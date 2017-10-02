@@ -19,7 +19,7 @@ dependencies:
 
   multi_auth:
     github: msa7/multi_auth
-    branch: master
+    version: 1.0.0
 
   micrate:
     github: juanedi/micrate

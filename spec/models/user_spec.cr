@@ -22,6 +22,10 @@ describe User do
     it "allows role to be blank" do
       expect(user(role: "").valid?).to be_true
     end
+
+    it "allows handle to be blank" do
+      expect(user(handle: "").valid?).to be_true
+    end
   end
 
   describe "#admin?" do
@@ -65,6 +69,16 @@ describe User do
   describe "#github_url" do
     it "returns url to user's github profile" do
       expect(user.github_url).not_to be_nil
+    end
+  end
+
+  describe "#twitter_url" do
+    it "returns nil if user does not have a handle" do
+      expect(user.twitter_url).to be_nil
+    end
+
+    it "returns url if user has a handle" do
+      expect(user(handle: "crystal-ann").twitter_url).not_to be_nil
     end
   end
 

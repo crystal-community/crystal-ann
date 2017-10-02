@@ -9,6 +9,7 @@ class User < Granite::ORM::Base
   field uid : String
   field provider : String
   field role : String
+  field handle : String
   timestamps
 
   validate :login, "can't be blank", ->(this : User) { !this.login.to_s.blank? }
@@ -29,6 +30,11 @@ class User < Granite::ORM::Base
 
   def github_url
     "https://github.com/#{login}"
+  end
+
+  def twitter_url
+    return nil if handle.to_s.blank?
+    "https://twitter.com/#{handle}"
   end
 
   def total_announcements
