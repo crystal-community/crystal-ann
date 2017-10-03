@@ -6,6 +6,11 @@
 
 Source code for https://crystal-ann.com.
 
+<p>
+  <img src="https://media.githubusercontent.com/media/veelenga/bin/master/crystal-ann/ipad_mockup.png" width="600" />
+  <img src="https://media.githubusercontent.com/media/veelenga/bin/master/crystal-ann/iphone_mockup.png" width="200" /> 
+</p>
+
 ## Setup
 
 1. [Install Crystal](https://crystal-lang.org/docs/installation/index.html)
