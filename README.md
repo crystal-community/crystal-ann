@@ -84,3 +84,4 @@ TWITTER_ACCESS_TOKEN_SECRET
 * [hugoabonizio](https://github.com/hugoabonizio) Hugo Abonizio - contributor, maintainer
 * [janczer](https://github.com/janczer) Janczer - contributor
 * [lex111](https://github.com/lex111) Alexey Pyltsyn - contributor
+* [vaibhavsingh97](https://github.com/vaibhavsingh97) Vaibhav Singh - contributor
