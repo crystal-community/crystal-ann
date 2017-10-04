@@ -43,6 +43,10 @@ dependencies:
     github: crystal-community/autolink.cr
     version: 0.1.3
 
+  recommender:
+    github: hugoabonizio/recommender.cr
+    version: 0.1.0
+
 development_dependencies:
   spec2:
     github: waterlink/spec2.cr

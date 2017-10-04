@@ -22,6 +22,8 @@ class Announcement < Granite::ORM::Base
   field description : String
   timestamps
 
+  has_many :recommendations
+
   validate :title, "is too short",
     ->(this : Announcement) { this.title.to_s.size >= 5 }
 
@@ -100,5 +102,9 @@ class Announcement < Granite::ORM::Base
 
   def content
     Autolink.auto_link(Markdown.to_html(description.not_nil!))
+  end
+
+  def load_recommendations
+    Announcement.all("WHERE id IN(#{recommendations.map(&.recommended_id).join(',')})")
   end
 end

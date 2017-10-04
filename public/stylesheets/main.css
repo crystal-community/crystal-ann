@@ -840,6 +840,7 @@ a:focus {
 	position: relative;
 	text-transform: uppercase;
 	z-index: 2;
+	padding: 5% 5% 1%;
 }
 
 .post-navigation .post-title {
@@ -849,6 +850,10 @@ a:focus {
 	line-height: 1.3333;
 	position: relative;
 	z-index: 2;
+}
+
+.nav-links .post-title:not(:last-child) {
+	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 }
 
 .post-navigation .nav-next,
@@ -4091,7 +4096,7 @@ p > video {
 	}
 
 	.post-navigation a {
-		padding: 5% 10%;
+		padding: 4% 10%;
 	}
 
 	.pagination {

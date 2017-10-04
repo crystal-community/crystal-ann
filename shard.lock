@@ -58,7 +58,7 @@ shards:
 
   multi_auth:
     github: msa7/multi_auth
-    commit: 2fc4db9b60e63d535289550c62eab4ece94aaf71
+    commit: 593403c33f80c9bd23dc23b397f0a5b2f7bb242f
 
   mysql:
     github: crystal-lang/crystal-mysql
@@ -78,7 +78,11 @@ shards:
 
   radix:
     github: luislavena/radix
-    commit: 211418416adba540b594af2260e1b5d0c8877c9e
+    version: 0.3.8
+
+  recommender:
+    github: hugoabonizio/recommender.cr
+    version: 0.1.0
 
   redis:
     github: stefanwille/crystal-redis
@@ -90,7 +94,7 @@ shards:
 
   shell-table:
     github: jwaldrip/shell-table.cr
-    version: 0.9.1
+    version: 0.9.2
 
   sidekiq:
     github: mperham/sidekiq.cr
@@ -111,6 +115,10 @@ shards:
   sqlite3:
     github: crystal-lang/crystal-sqlite3
     version: 0.8.2
+
+  stemmer:
+    github: hugoabonizio/stemmer.cr
+    commit: 1ca4d8c2023c32da006c9ae138f90b327e939016
 
   string_inflection:
     github: mosop/string_inflection
