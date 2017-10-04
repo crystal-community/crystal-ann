@@ -357,4 +357,13 @@ describe AnnouncementController do
       end
     end
   end
+
+  describe "GET random" do
+    before { announcement }
+
+    it "redirects to a random announcement" do
+      get "/announcements/random"
+      expect(response.status_code).to eq 302
+    end
+  end
 end
