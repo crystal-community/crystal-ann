@@ -39,8 +39,8 @@ describe Announcement do
 
   describe "#typename" do
     it "returns the properly capitalized type name" do
-      expect(announcement(type: 0).typename).to eq "Blog Post"
-      expect(announcement(type: 1).typename).to eq "Project Update"
+      expect(announcement(type: 0).typename).to eq "Blog post"
+      expect(announcement(type: 1).typename).to eq "Project update"
       expect(announcement(type: 2).typename).to eq "Conference"
       expect(announcement(type: 3).typename).to eq "Meetup"
       expect(announcement(type: 4).typename).to eq "Podcast"
