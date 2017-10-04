@@ -1,5 +1,6 @@
 require "./spec_helper"
 require "../../src/models/announcement.cr"
+require "../../db/seeds/*"
 
 describe Announcement do
   describe "Validation" do
@@ -110,6 +111,23 @@ describe Announcement do
     it "returns hash id if id is present" do
       hashid = announcement.tap { |a| a.id = 1_i64 }.hashid
       expect(hashid).to eq "D49Nz"
+    end
+  end
+
+  describe ".random" do
+    before do
+      Seeds::Users.create_records
+      Seeds::Announcements.create_records
+    end
+
+    it "returns random announcements" do
+      list = [] of Int64
+      10.times do
+        id = Announcement.random.id.not_nil!
+        expect(id).to_be > 0
+        list << id
+      end
+      expect(list.uniq.size).to_be >= 3
     end
   end
 end

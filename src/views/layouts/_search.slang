@@ -9,3 +9,5 @@ aside.widget.search
       input type="hidden" name="user" value="#{user}"
     - if type
       input type="hidden" name="type" value="#{type}"
+  a href="/announcements/random"
+    | I'm feeling lucky!
