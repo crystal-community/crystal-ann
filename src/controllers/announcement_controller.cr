@@ -84,8 +84,11 @@ class AnnouncementController < ApplicationController
   end
 
   def random
-    announcement = Announcement.random
-    redirect_to "/announcements/#{announcement.id}"
+    if announcement = Announcement.random
+      redirect_to "/announcements/#{announcement.id}"
+    else
+      redirect_to "/"
+    end
   end
 
   private def announcement_params

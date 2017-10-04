@@ -103,6 +103,6 @@ class Announcement < Granite::ORM::Base
   end
 
   def self.random
-    Announcement.all("ORDER BY RANDOM() LIMIT 1").first
+    Announcement.all("ORDER BY RANDOM() LIMIT 1").first?
   end
 end

@@ -364,6 +364,7 @@ describe AnnouncementController do
     it "redirects to a random announcement" do
       get "/announcements/random"
       expect(response.status_code).to eq 302
+      expect(response).to redirect_to "/announcements/#{announcement.id}"
     end
   end
 end

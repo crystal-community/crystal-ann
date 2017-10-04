@@ -1,6 +1,5 @@
 require "./spec_helper"
 require "../../src/models/announcement.cr"
-require "../../db/seeds/*"
 
 describe Announcement do
   describe "Validation" do
@@ -115,19 +114,15 @@ describe Announcement do
   end
 
   describe ".random" do
+    let!(:ann) { announcement(user.tap &.save).tap &.save }
+
     before do
-      Seeds::Users.create_records
-      Seeds::Announcements.create_records
+      Announcement.clear
+      User.clear
     end
 
     it "returns random announcements" do
-      list = [] of Int64
-      10.times do
-        id = Announcement.random.id.not_nil!
-        expect(id).to_be > 0
-        list << id
-      end
-      expect(list.uniq.size).to_be >= 3
+      expect(Announcement.random.not_nil!.id).to eq ann.id
     end
   end
 end
