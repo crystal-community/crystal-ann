@@ -23,6 +23,7 @@ Amber::Server.configure do |app|
 
   routes :web do
     resources "/announcements", AnnouncementController
+    get "/announcements/random", AnnouncementController, :random
     get "/=:hashid", AnnouncementController, :expand
     get "/rss", RSSController, :show
     get "/sessions/new", SessionsController, :new

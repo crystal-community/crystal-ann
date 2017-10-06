@@ -3,7 +3,7 @@ div.page-content
   p
     | It is a resource where you can announce
 
-    a href="https://crystal-lang.org" target="_blank" = "Crystal's programming language"
+    a href="https://crystal-lang.org" target="_blank" rel="noopener noreferrer" = "Crystal's programming language"
 
     | stuff you have created. A place where you can easily share with others:
 
@@ -21,7 +21,7 @@ div.page-content
 
   p
     | It is built with
-    a href="https://amberframework.org/" target="_blank" = "Amber Web Framework"
+    a href="https://amberframework.org/" target="_blank" rel="noopener noreferrer" = "Amber Web Framework"
     | and itself is a great example of Crystal's awesomeness.
 
   h2 Why should I post my stuff here ?
@@ -29,7 +29,7 @@ div.page-content
     | Crystal [ANN] is intended to spread your announcement with community.
     | Your announcement will appear on this website, on
 
-    a href="https://twitter.com/crystallang_ann" target="_blank" = "Twitter"
+    a href="https://twitter.com/crystallang_ann" target="_blank" rel="noopener noreferrer" = "Twitter"
 
     | and distributed over
 
@@ -47,9 +47,9 @@ div.page-content
         | your work
       li
         | Follow it on
-          a href="https://twitter.com/crystallang_ann" target="_blank" = "Twitter"
+          a href="https://twitter.com/crystallang_ann" target="_blank" rel="noopener noreferrer" = "Twitter"
       li
         | Give it a star, report an issue or propose a change on
-          a href="https://github.com/crystal-community/crystal-ann" target="_blank" = "Github"
+          a href="https://github.com/crystal-community/crystal-ann" target="_blank" rel="noopener noreferrer" = "Github"
       li
         | Love Crystal ;)

@@ -2482,6 +2482,15 @@ p > video {
   margin-bottom: 10px;
 }
 
+.actions {
+  float: right;
+}
+
+.actions .fa {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 /**
  * 16.0 Media Queries
  */
@@ -2638,7 +2647,6 @@ p > video {
   .site-footer .site-info a {
     float: left;
     clear: left;
-    text-decoration: underline;
   }
 
   .site-footer .footer-block {

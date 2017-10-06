@@ -18,13 +18,13 @@ div.page-content
 
       p
         i.fa.fa-github
-        a href=user.github_url target="_blank"
+        a href=user.github_url target="_blank" rel="noopener noreferrer"
           = user.login
 
         /- if user.twitter_login
         /| /
         /i.fa.fa-twitter
-        /a href=user.twitter_url target="_blank"
+        /a href=user.twitter_url target="_blank" rel="noopener noreferrer"
         /  = user.twitter_login
 
   div style="clear:left;"

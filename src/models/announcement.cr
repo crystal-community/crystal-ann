@@ -101,4 +101,8 @@ class Announcement < Granite::ORM::Base
   def content
     Autolink.auto_link(Markdown.to_html(description.not_nil!))
   end
+
+  def self.random
+    Announcement.all("ORDER BY RANDOM() LIMIT 1").first?
+  end
 end

@@ -6,6 +6,11 @@
 
 Source code for https://crystal-ann.com.
 
+<p>
+  <img src="https://media.githubusercontent.com/media/veelenga/bin/master/crystal-ann/ipad_mockup.png" width="600" />
+  <img src="https://media.githubusercontent.com/media/veelenga/bin/master/crystal-ann/iphone_mockup.png" width="200" /> 
+</p>
+
 ## Setup
 
 1. [Install Crystal](https://crystal-lang.org/docs/installation/index.html)
@@ -79,3 +84,5 @@ TWITTER_ACCESS_TOKEN_SECRET
 * [hugoabonizio](https://github.com/hugoabonizio) Hugo Abonizio - contributor, maintainer
 * [janczer](https://github.com/janczer) Janczer - contributor
 * [lex111](https://github.com/lex111) Alexey Pyltsyn - contributor
+* [vaibhavsingh97](https://github.com/vaibhavsingh97) Vaibhav Singh - contributor
+* [PAPERPANKS](https://github.com/PAPERPANKS) Pankaj Kumar Gautam - contributor
