@@ -21,10 +21,10 @@ div.page-content
         a href=user.github_url target="_blank" rel="noopener noreferrer"
           = user.login
 
-        /- if user.twitter_login
-        /| /
-        /i.fa.fa-twitter
-        /a href=user.twitter_url target="_blank" rel="noopener noreferrer"
-        /  = user.twitter_login
+        - if user.handle
+          | /
+          i.fa.fa-twitter
+          a href=user.twitter_url target="_blank" rel="noopener noreferrer"
+            = user.handle
 
   div style="clear:left;"
