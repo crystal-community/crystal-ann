@@ -20,6 +20,10 @@ class User < Granite::ORM::Base
     admin? || announcement.user_id == id
   end
 
+  def me?(user : User)
+    user.id == id
+  end
+
   def admin?
     role == "admin"
   end

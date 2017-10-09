@@ -27,4 +27,21 @@ div.page-content
           a href=user.twitter_url target="_blank" rel="noopener noreferrer"
             = user.handle
 
+          - if current_user.try &.me?(user)
+            | (
+              a href="/users/remove_handle?_method=put" title="Disconnect Twitter" onclick="return confirm('Are you sure?');"
+                | disconnect
+            | )
+
+  - if !user.handle && current_user.try &.me?(user)
+
+    div.connect-twitter
+      form action="/oauth/new" method="get"
+        input type="hidden" name="provider" value="twitter"
+        button type="submit"
+          | Connect Twitter
+      p
+        small
+          | You'll be mentioned alongside your announcement.
+
   div style="clear:left;"

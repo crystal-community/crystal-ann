@@ -33,6 +33,7 @@ Amber::Server.configure do |app|
 
     get "/me", UserController, :me
     get "/users/:login", UserController, :show
+    put "/users/remove_handle", UserController, :remove_handle
 
     get "/", AnnouncementController, :index
   end

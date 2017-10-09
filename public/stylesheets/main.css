@@ -2491,6 +2491,12 @@ p > video {
   padding-right: 5px;
 }
 
+div.connect-twitter {
+  display: inline-block;
+  padding-top: 35px;
+  margin-bottom: -20px;
+}
+
 /**
  * 16.0 Media Queries
  */

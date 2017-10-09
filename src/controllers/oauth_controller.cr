@@ -35,7 +35,7 @@ class OAuthController < ApplicationController
     user = current_user!
 
     u = oauth(provider).provider.user(params.to_h)
-    user.handle = u.nickname if u.nickname
+    user.handle = u.nickname
     user.save
   end
 
