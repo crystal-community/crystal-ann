@@ -39,6 +39,7 @@ div.page-content
       form action="/oauth/new" method="get"
         input type="hidden" name="provider" value="twitter"
         button type="submit"
+          i.fa.fa-twitter
           | Connect Twitter
       p
         small

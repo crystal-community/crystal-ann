@@ -527,6 +527,10 @@ input[type="submit"] {
 	text-transform: uppercase;
 }
 
+button .fa {
+  margin-right: 5px;
+}
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
