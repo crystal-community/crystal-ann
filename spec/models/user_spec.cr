@@ -60,6 +60,18 @@ describe User do
     end
   end
 
+  describe "#me?" do
+    it "returns true if this is the same user" do
+      user = user().tap { |u| u.id = 1_i64 }
+      expect(user.me? user).to be_true
+    end
+
+    it "returns false if this is not the same user" do
+      user = user().tap { |u| u.id = 1_i64 }
+      expect(user.me? user()).to be_false
+    end
+  end
+
   describe "#avatar_url" do
     it "returns url to user's avatar" do
       expect(user.avatar_url).not_to be_nil

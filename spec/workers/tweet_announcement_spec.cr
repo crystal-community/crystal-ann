@@ -16,25 +16,25 @@ describe Workers::TweetAnnouncement do
     let(:template) { subject.tweet_template announcement }
 
     it "includes announcement title" do
-      expect(template.includes? announcement.title.to_s).to eq true
+      expect(template.includes? announcement.title.to_s).to be_true
     end
 
     it "includes SITE.url" do
-      expect(template.includes? SITE.url).to eq true
+      expect(template.includes? SITE.url).to be_true
     end
 
     it "includes announcement.short_path" do
-      expect(template.includes? announcement.short_path.to_s).to eq true
+      expect(template.includes? announcement.short_path.to_s).to be_true
     end
 
     it "includes user handle" do
       handle = "crystal_ann"
       announcement = announcement(user(handle: handle).tap &.save)
-      expect(subject.tweet_template(announcement).includes? "@#{handle}").to eq true
+      expect(subject.tweet_template(announcement).includes? "@#{handle}").to be_true
     end
 
     it "includes #crystallang hashtag" do
-      expect(template.includes? "#crystallang").to eq true
+      expect(template.includes? "#crystallang").to be_true
     end
   end
 
@@ -58,7 +58,7 @@ describe Workers::TweetAnnouncement do
     end
 
     it "makes a tweet" do
-      expect(subject.tweet(announcement)).not_to eq false
+      expect(subject.tweet(announcement)).not_to be_true
     end
   end
 end

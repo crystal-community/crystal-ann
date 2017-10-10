@@ -6,11 +6,15 @@ class OAuthController < ApplicationController
   def authenticate
     case provider = find_provider
     when "github"
-      sign_in_user "github"
+      sign_in_user provider
       redirect_to "/announcements/new"
     when "twitter"
-      save_user_handle "twitter"
-      redirect_to "/me"
+      if signed_in?
+        save_user_handle provider
+        redirect_to "/me"
+      else
+        redirect_to "/"
+      end
     else
       redirect_to "/"
     end

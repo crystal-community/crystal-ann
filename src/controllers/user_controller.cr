@@ -19,7 +19,9 @@ class UserController < ApplicationController
     if user = current_user
       user.handle = nil
       user.save
+      redirect_to "/me"
+    else
+      redirect_to "/"
     end
-    redirect_to "/me"
   end
 end
