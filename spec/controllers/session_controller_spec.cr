@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe SessionsController do
+describe SessionController do
   describe "DELETE destroy" do
     let(:user) { user(login: "Bro").tap &.save }
     before { login_as user }

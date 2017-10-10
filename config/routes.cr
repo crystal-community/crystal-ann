@@ -29,7 +29,7 @@ Amber::Server.configure do |app|
 
     get "/oauth/new", OAuthController, :new
     get "/oauth/:provider", OAuthController, :authenticate
-    delete "/sessions", SessionsController, :destroy
+    delete "/sessions", SessionController, :destroy
 
     get "/me", UserController, :me
     get "/users/:login", UserController, :show
