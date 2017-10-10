@@ -27,6 +27,12 @@ describe Workers::TweetAnnouncement do
       expect(template.includes? announcement.short_path.to_s).to eq true
     end
 
+    it "includes user handle" do
+      handle = "crystal_ann"
+      announcement = announcement(user(handle: handle).tap &.save)
+      expect(subject.tweet_template(announcement).includes? "@#{handle}").to eq true
+    end
+
     it "includes #crystallang hashtag" do
       expect(template.includes? "#crystallang").to eq true
     end

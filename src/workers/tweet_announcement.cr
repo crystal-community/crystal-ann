@@ -32,7 +32,12 @@ module Workers
     end
 
     def tweet_template(announcement)
-      "#{announcement.title} #{SITE.url}#{announcement.short_path} #crystallang"
+      String.build do |s|
+        s << announcement.title
+        s << " #{SITE.url}#{announcement.short_path}"
+        s << " by @#{announcement.user.try &.handle}" if announcement.user.try &.handle
+        s << " #crystallang"
+      end
     end
   end
 end
