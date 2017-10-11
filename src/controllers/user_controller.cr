@@ -14,4 +14,14 @@ class UserController < ApplicationController
       redirect_to "/"
     end
   end
+
+  def remove_handle
+    if user = current_user
+      user.handle = nil
+      user.save
+      redirect_to "/me"
+    else
+      redirect_to "/"
+    end
+  end
 end
