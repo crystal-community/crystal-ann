@@ -29,7 +29,7 @@ div.page-content
 
           - if current_user.try &.me?(user)
             | (
-              a href="/users/remove_handle?_method=put" title="Disconnect Twitter" onclick="return confirm('Are you sure?');"
+              a href="/users/remove_handle?_method=PUT&_csrf=#{csrf_token}" title="Disconnect Twitter" onclick="return confirm('Are you sure?');"
                 | disconnect
             | )
 

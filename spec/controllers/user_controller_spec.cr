@@ -46,6 +46,13 @@ describe UserController do
       expect(User.find(user.id).not_nil!.handle).to be_nil
     end
 
+    it "does not remove handle if csrf token is invalid" do
+      login_as user
+      put "/users/remove_handle", body: "_csrf=invalid-token"
+      expect(response.status_code).to eq 403
+      expect(User.find(user.id).try &.handle).not_to be_nil
+    end
+
     it "redirects to /me if user is signed in" do
       login_as user
       put "/users/remove_handle"

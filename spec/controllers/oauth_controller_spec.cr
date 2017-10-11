@@ -78,7 +78,7 @@ describe OAuthController do
         expect(response).to redirect_to "/announcements/new"
       end
 
-      it "can find existed user and update attributes" do
+      it "can find existing user and update attributes" do
         u = user(
           name: "Marilyn Manson",
           login: github_user_response[:login],

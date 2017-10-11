@@ -44,9 +44,9 @@ describe User do
 
   describe "#can_update?" do
     it "returns true if announcement belongs to the user" do
-      user = user().tap { |u| u.id = 1_i64 }
-      announcement = announcement(user_id: user.id.not_nil!)
-      expect(user.can_update? announcement).to be_true
+      u = user.tap { |u| u.id = 1_i64 }
+      announcement = announcement(user_id: u.id.not_nil!)
+      expect(u.can_update? announcement).to be_true
     end
 
     it "returns false if announcement does not belong to the user" do
@@ -62,13 +62,13 @@ describe User do
 
   describe "#me?" do
     it "returns true if this is the same user" do
-      user = user().tap { |u| u.id = 1_i64 }
-      expect(user.me? user).to be_true
+      u = user.tap { |u| u.id = 1_i64 }
+      expect(u.me? u).to be_true
     end
 
     it "returns false if this is not the same user" do
-      user = user().tap { |u| u.id = 1_i64 }
-      expect(user.me? user()).to be_false
+      u = user.tap { |u| u.id = 1_i64 }
+      expect(u.me? user).to be_false
     end
   end
 

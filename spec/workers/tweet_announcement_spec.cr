@@ -58,7 +58,7 @@ describe Workers::TweetAnnouncement do
     end
 
     it "makes a tweet" do
-      expect(subject.tweet(announcement)).not_to be_true
+      expect(subject.tweet(announcement)).not_to be_false
     end
   end
 end
