@@ -2,6 +2,7 @@ require "sidekiq"
 
 require "twitter-crystal"
 require "../models/announcement"
+require "../models/user"
 
 module Workers
   class TweetAnnouncement
