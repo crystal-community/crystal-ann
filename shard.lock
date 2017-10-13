@@ -58,7 +58,7 @@ shards:
 
   multi_auth:
     github: msa7/multi_auth
-    commit: 593403c33f80c9bd23dc23b397f0a5b2f7bb242f
+    version: 1.0.0
 
   mysql:
     github: crystal-lang/crystal-mysql

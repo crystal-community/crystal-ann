@@ -5,7 +5,7 @@ require "./seeds/*"
 
 puts "Preparing development database:"
 
-puts "  * Deleting existed records"
+puts "  * Deleting existing records"
 Announcement.clear
 User.clear
 

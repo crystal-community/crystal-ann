@@ -107,4 +107,8 @@ class Announcement < Granite::ORM::Base
   def load_recommendations
     Announcement.all("WHERE id IN(#{recommendations.map(&.recommended_id).join(',')})")
   end
+
+  def self.random
+    Announcement.all("ORDER BY RANDOM() LIMIT 1").first?
+  end
 end

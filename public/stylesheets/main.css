@@ -527,6 +527,10 @@ input[type="submit"] {
 	text-transform: uppercase;
 }
 
+button .fa {
+  margin-right: 5px;
+}
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -2487,6 +2491,21 @@ p > video {
   margin-bottom: 10px;
 }
 
+.actions {
+  float: right;
+}
+
+.actions .fa {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div.connect-twitter {
+  display: inline-block;
+  padding-top: 35px;
+  margin-bottom: -20px;
+}
+
 /**
  * 16.0 Media Queries
  */
@@ -2643,7 +2662,6 @@ p > video {
   .site-footer .site-info a {
     float: left;
     clear: left;
-    text-decoration: underline;
   }
 
   .site-footer .footer-block {

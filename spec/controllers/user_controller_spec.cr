@@ -36,4 +36,34 @@ describe UserController do
       expect(response).to redirect_to "/"
     end
   end
+
+  describe "PUT #remove_handle" do
+    let(:user) { user(handle: "crystal_ann").tap &.save }
+
+    it "removes user handle if user is signed in" do
+      login_as user
+      put "/users/remove_handle"
+      expect(User.find(user.id).not_nil!.handle).to be_nil
+    end
+
+    it "does not remove handle if csrf token is invalid" do
+      login_as user
+      put "/users/remove_handle", body: "_csrf=invalid-token"
+      expect(response.status_code).to eq 403
+      expect(User.find(user.id).try &.handle).not_to be_nil
+    end
+
+    it "redirects to /me if user is signed in" do
+      login_as user
+      put "/users/remove_handle"
+      expect(response.status_code).to eq 302
+      expect(response).to redirect_to "/me"
+    end
+
+    it "redirects to / if user is not signed in" do
+      put "/users/remove_handle"
+      expect(response.status_code).to eq 302
+      expect(response).to redirect_to "/"
+    end
+  end
 end

@@ -112,4 +112,17 @@ describe Announcement do
       expect(hashid).to eq "D49Nz"
     end
   end
+
+  describe ".random" do
+    let!(:ann) { announcement(user.tap &.save).tap &.save }
+
+    before do
+      Announcement.clear
+      User.clear
+    end
+
+    it "returns random announcements" do
+      expect(Announcement.random.not_nil!.id).to eq ann.id
+    end
+  end
 end

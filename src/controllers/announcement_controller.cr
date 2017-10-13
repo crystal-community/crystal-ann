@@ -82,6 +82,14 @@ class AnnouncementController < ApplicationController
     end
   end
 
+  def random
+    if announcement = Announcement.random
+      redirect_to "/announcements/#{announcement.id}"
+    else
+      redirect_to "/"
+    end
+  end
+
   private def announcement_params
     params.to_h.select %w(title description type)
   end
