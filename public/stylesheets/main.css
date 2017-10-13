@@ -2501,6 +2501,10 @@ div.connect-twitter {
   margin-bottom: -20px;
 }
 
+a.tag-link {
+  padding-right: 6px;
+}
+
 /**
  * 16.0 Media Queries
  */
