@@ -27,6 +27,7 @@ html
             - if signed_in?
               == render_template "layouts/_profile.slang"
             == render_template "layouts/_search.slang"
+            == render_template "layouts/_tags.slang"
             == render_template "layouts/_social_nav.slang"
 
       div#content.site-content
