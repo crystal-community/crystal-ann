@@ -1,8 +1,10 @@
 # Crystal [ANN]
 [![Build Status](https://travis-ci.org/crystal-community/crystal-ann.svg?branch=master)](https://travis-ci.org/crystal-community/crystal-ann)
 [![Dependency Status](https://shards.rocks/badge/github/crystal-community/crystal-ann/status.svg)](https://shards.rocks/github/crystal-community/crystal-ann)
+[![GitHub release](https://img.shields.io/github/release/crystal-community/crystal-ann.svg)](https://github.com/crystal-community/crystal-ann)
 [![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](http://www.amberframework.org/)
 [![Gitter](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Twitter Follow](https://img.shields.io/twitter/follow/crystallang_ann.svg?style=social&label=Follow)](https://twitter.com/crystallang_ann)
 
 Source code for https://crystal-ann.com.
 
@@ -76,6 +78,9 @@ TWITTER_CONSUMER_KEY
 TWITTER_CONSUMER_SECRET
 TWITTER_ACCESS_TOKEN
 TWITTER_ACCESS_TOKEN_SECRET
+
+TWITTER_OAUTH_CONSUMER_KEY
+TWITTER_OAUTH_CONSUMER_SECRET
 ```
 
 ## Contributors

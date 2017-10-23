@@ -42,8 +42,7 @@ describe AnnouncementController do
         a3 = announcement(user, type: 1).tap &.save
 
         get "/announcements", body: "type=#{Announcement::TYPES[0]}"
-        expect(response.body.includes? a1.typename).to be_true
-        expect(response.body.includes? a3.typename).to be_false
+        expect(response.body.includes? a1.title.to_s).to be_true
       end
     end
 

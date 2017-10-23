@@ -9,7 +9,7 @@ div.page-content
     - else
       == render "_form.slang"
   - else
-    form action="/sessions/new"
+    form action="/oauth/new"
       button type="submit"
         i.fa.fa-github
         | Sign in and post

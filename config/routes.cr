@@ -26,11 +26,15 @@ Amber::Server.configure do |app|
     get "/announcements/random", AnnouncementController, :random
     get "/=:hashid", AnnouncementController, :expand
     get "/rss", RSSController, :show
-    get "/sessions/new", SessionsController, :new
-    delete "/sessions", SessionsController, :destroy
-    get "/github/auth", SessionsController, :create
+
+    get "/oauth/new", OAuthController, :new
+    get "/oauth/:provider", OAuthController, :authenticate
+    delete "/sessions", SessionController, :destroy
+
     get "/me", UserController, :me
     get "/users/:login", UserController, :show
+    put "/users/remove_handle", UserController, :remove_handle
+
     get "/", AnnouncementController, :index
   end
 end

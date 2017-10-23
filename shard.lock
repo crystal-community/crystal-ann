@@ -58,7 +58,7 @@ shards:
 
   multi_auth:
     github: msa7/multi_auth
-    commit: 2fc4db9b60e63d535289550c62eab4ece94aaf71
+    version: 1.0.0
 
   mysql:
     github: crystal-lang/crystal-mysql
@@ -78,7 +78,7 @@ shards:
 
   radix:
     github: luislavena/radix
-    commit: 211418416adba540b594af2260e1b5d0c8877c9e
+    version: 0.3.8
 
   redis:
     github: stefanwille/crystal-redis
