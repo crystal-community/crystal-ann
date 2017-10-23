@@ -42,4 +42,13 @@ class User < Granite::ORM::Base
   def self.find_by_login(login)
     User.all("WHERE login = $1 LIMIT 1", login).first?
   end
+
+  def last_hour_announcements
+    @@adapter.open do |db|
+      db.scalar(%Q{
+        SELECT COUNT(*) FROM announcements
+          WHERE user_id = $1 AND created_at > (NOW() - INTERVAL '1 HOUR')
+      }, id).as(Int64)
+    end
+  end
 end
