@@ -122,13 +122,13 @@ class AnnouncementController < ApplicationController
   private def check_rate_limit!
     return true unless rate_limit = max_anns_per_hour
     if current_user!.last_hour_announcements >= rate_limit
-      return redirect_to "/"
+      redirect_to "/"
     end
   end
 
   private def limit_reached?
-    if (rate_limit = max_anns_per_hour) && signed_in?
-      return current_user!.last_hour_announcements + 1 > rate_limit
+    if rate_limit = max_anns_per_hour
+      current_user!.last_hour_announcements + 1 > rate_limit
     end
   end
 end
