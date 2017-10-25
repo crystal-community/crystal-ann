@@ -33,4 +33,8 @@ class ApplicationController < Amber::Controller::Base
       redirect_to "https://#{request.host_with_port}#{request.path}"
     end
   end
+
+  protected def max_anns_per_hour
+    ENV["MAX_ANNS_PER_HOUR"]?.try(&.to_i)
+  end
 end

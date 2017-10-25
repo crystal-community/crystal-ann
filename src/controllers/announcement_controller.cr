@@ -4,6 +4,10 @@ require "../workers/tweet_announcement"
 class AnnouncementController < ApplicationController
   PER_PAGE = 10
 
+  before_action do
+    only [:create] { check_rate_limit! }
+  end
+
   def index
     query, current_page, type, user_id = query_param, page_param, type_param, user_id_param
     total_pages = Announcement.count(query, type, user_id).fdiv(PER_PAGE).ceil.to_i
@@ -113,5 +117,18 @@ class AnnouncementController < ApplicationController
 
   private def user_id_param
     User.find_by_login(params["user"]?).try(&.id)
+  end
+
+  private def check_rate_limit!
+    return true unless rate_limit = max_anns_per_hour
+    if current_user!.last_hour_announcements >= rate_limit
+      redirect_to "/"
+    end
+  end
+
+  private def limit_reached?
+    if rate_limit = max_anns_per_hour
+      current_user!.last_hour_announcements + 1 > rate_limit
+    end
   end
 end
