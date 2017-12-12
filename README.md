@@ -9,8 +9,8 @@
 Source code for https://crystal-ann.com.
 
 <p>
-  <img src="https://gitcdn.link/cdn/veelenga/bin/9c2d7c5dd87f4f1ccd02a70531ddaf6f215c866f/crystal-ann/ipad_mockup.png" width="600" />
-  <img src="https://gitcdn.link/cdn/veelenga/bin/9c2d7c5dd87f4f1ccd02a70531ddaf6f215c866f/crystal-ann/iphone_mockup.png" width="200" />
+  <img src="https://gitcdn.link/repo/veelenga/bin/master/crystal-ann/ipad_mockup.png" width="600" />
+  <img src="https://gitcdn.link/repo/veelenga/bin/master/crystal-ann/iphone_mockup.png" width="200" />
 </p>
 
 ## Setup
