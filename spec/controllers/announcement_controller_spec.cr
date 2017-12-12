@@ -78,6 +78,17 @@ describe AnnouncementController do
       expect(response.status_code).to eq 200
       expect(response.body.includes? "Make an Announcement").to be_true
     end
+
+    context "rate limit reached" do
+      before { login_as user; ENV["MAX_ANNS_PER_HOUR"] = "0" }
+      after { ENV["MAX_ANNS_PER_HOUR"] = nil }
+
+      it "shows rate limit message" do
+        get "/announcements/new"
+        expect(response.status_code).to eq 200
+        expect(response.body.includes? "You can create up to").to be_true
+      end
+    end
   end
 
   describe "POST create" do
@@ -98,6 +109,18 @@ describe AnnouncementController do
         post "/announcements", body: "title=test-title&description=test-description&type=0&_csrf=invalid-token"
         expect(response.status_code).to eq 403
         expect(Announcement.all.size).to eq 0
+      end
+
+      context "and rate limit is reached" do
+        before { ENV["MAX_ANNS_PER_HOUR"] = "0" }
+        after { ENV["MAX_ANNS_PER_HOUR"] = nil }
+
+        it "redirects to /" do
+          post "/announcements", body: "title=test-title&description=test-description&type=0"
+          expect(response.status_code).to eq 302
+          expect(response).to redirect_to "/"
+          expect(Announcement.all.size).to eq 0
+        end
       end
     end
 

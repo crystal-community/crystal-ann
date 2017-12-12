@@ -128,4 +128,26 @@ describe User do
       expect(User.find_by_login("bad-login")).to be_nil
     end
   end
+
+  describe "#last_hour_announcements" do
+    before do
+      Announcement.clear
+      User.clear
+    end
+
+    let(:user) { user(login: "john2").tap &.save }
+
+    it "returns the number of announcements made by the user during the last hour" do
+      an = announcement(user: user).tap &.save
+      an.created_at = Time.new(2016, 2, 15, 10, 20, 30)
+      an.save
+      an = announcement(user: user).tap &.save
+      an = announcement(user: user).tap &.save
+      expect(user.last_hour_announcements).to eq 2
+    end
+
+    it "returns 0 if there are no announcements made by the user during the last hour" do
+      expect(user.last_hour_announcements).to eq 0
+    end
+  end
 end
