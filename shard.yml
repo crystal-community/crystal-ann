@@ -12,7 +12,7 @@ license: MIT
 dependencies:
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.7.2
+    version: 0.7.8
  
   pg:
     github: will/crystal-pg
@@ -30,7 +30,7 @@ dependencies:
 
   amber:
     github: amberframework/amber
-    version: 0.2.6
+    version: 0.3.7
 
   twitter-crystal:
     github: sferik/twitter-crystal
