@@ -5,7 +5,7 @@ def user(**params)
     :uid      => (rand() * 10000).to_i.to_s,
     :login    => "johndoe",
     :provider => "github",
-  } of Symbol => String | Int64
+  } of Symbol | String => String | JSON::Type
 
   params.each { |k, v| attributes[k] = v }
   User.new attributes
@@ -15,8 +15,8 @@ def announcement(**params)
   attributes = {
     :title       => "title",
     :description => "description",
-    :type        => Announcement::TYPES.keys.first,
-  } of Symbol => String | Int64 | Int32
+    :type        => Announcement::TYPES.keys.first.as(Int64),
+  } of Symbol | String => String | JSON::Type
 
   params.each { |k, v| attributes[k] = v }
   Announcement.new attributes

@@ -29,7 +29,7 @@ end
 {% for method in %w(get head post put patch delete) %}
   def {{method.id}}(path, headers : HTTP::Headers? = nil, body : String? = nil)
     request = HTTP::Request.new("{{method.id}}".upcase, path, headers, body)
-    request.headers["Content-Type"] = Amber::Router::Params::URL_ENCODED_FORM
+    request.headers["Content-Type"] = Amber::Router::ParamsParser::URL_ENCODED_FORM
     Global.response = process_request request
   end
 {% end %}
@@ -40,8 +40,8 @@ def process_request(request)
   context = HTTP::Server::Context.new(request, response)
   context.session = Global.session if Global.session
   context.params["_csrf"] ||= Amber::Pipe::CSRF.token(context).to_s
-  main_handler = build_main_handler
-  main_handler.call context
+  # main_handler = build_main_handler
+  # main_handler.call context
   response.close
   io.rewind
   client_response = HTTP::Client::Response.from_io(io, decompress: false)
@@ -50,8 +50,8 @@ end
 
 def build_main_handler
   amber = Amber::Server.settings
-  amber.handler.prepare_pipelines
-  amber.handler
+  # amber.handler.prepare_pipelines
+  # amber.handler
 end
 
 def response
