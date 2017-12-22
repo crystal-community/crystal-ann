@@ -40,8 +40,8 @@ def process_request(request)
   context = HTTP::Server::Context.new(request, response)
   context.session = Global.session if Global.session
   context.params["_csrf"] ||= Amber::Pipe::CSRF.token(context).to_s
-  # main_handler = build_main_handler
-  # main_handler.call context
+  main_handler = build_main_handler
+  main_handler.call context
   response.close
   io.rewind
   client_response = HTTP::Client::Response.from_io(io, decompress: false)
@@ -49,9 +49,19 @@ def process_request(request)
 end
 
 def build_main_handler
-  amber = Amber::Server.settings
-  # amber.handler.prepare_pipelines
-  # amber.handler
+  handler = Amber::Pipe::Pipeline.new
+  handler.build :web do
+    plug Amber::Pipe::Error.new
+    plug Amber::Pipe::Session.new
+    plug Amber::Pipe::CSRF.new
+  end
+  handler.build :static do
+    plug Amber::Pipe::Error.new
+    plug Amber::Pipe::Static.new("./public")
+    plug HTTP::CompressHandler.new
+  end
+  handler.prepare_pipelines
+  handler
 end
 
 def response
