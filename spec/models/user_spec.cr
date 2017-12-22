@@ -141,8 +141,8 @@ describe User do
       an = announcement(user: user).tap &.save
       an.created_at = Time.new(2016, 2, 15, 10, 20, 30)
       an.save
-      an = announcement(user: user).tap &.save
-      an = announcement(user: user).tap &.save
+      announcement(user: user).tap &.save
+      announcement(user: user).tap &.save
       expect(user.last_hour_announcements).to eq 2
     end
 
