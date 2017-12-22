@@ -7,7 +7,7 @@ div.page-content
         li
           = "You can create up to #{max_anns_per_hour} announcements per hour"
     - else
-      == render "_form.slang"
+      == render partial: "_form.slang"
   - else
     form action="/oauth/new"
       button type="submit"

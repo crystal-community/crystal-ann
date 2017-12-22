@@ -3,4 +3,4 @@
 div.page-content
   h1 Edit Announcement
 
-  == render "_form.slang"
+  == render partial: "_form.slang"
