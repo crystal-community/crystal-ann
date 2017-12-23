@@ -8,3 +8,8 @@ language: crystal
 services: postgresql
 before_script:
   - psql -c "create database $DATABASE_NAME;" -U postgres
+install:
+  - crystal deps
+script:
+  - crystal spec
+  - bin/ameba

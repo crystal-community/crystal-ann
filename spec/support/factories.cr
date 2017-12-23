@@ -2,7 +2,7 @@ require "../../src/models/**"
 
 def user(**params)
   attributes = {
-    :uid      => (rand() * 10000).to_i.to_s,
+    :uid      => (rand() * 10_000).to_i.to_s,
     :login    => "johndoe",
     :provider => "github",
   } of Symbol | String => String | JSON::Type
