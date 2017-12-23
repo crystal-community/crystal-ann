@@ -57,7 +57,7 @@ class User < Granite::ORM::Base
     @@adapter.open do |db|
       db.scalar(%Q{
         SELECT COUNT(*) FROM announcements
-          WHERE user_id = $1 AND created_at > (NOW() - INTERVAL '1 HOUR')
+        WHERE user_id = $1 AND created_at > ((NOW() at time zone 'utc') - INTERVAL '1 HOUR')
       }, id).as(Int64)
     end
   end

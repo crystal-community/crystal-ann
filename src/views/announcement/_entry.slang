@@ -29,7 +29,7 @@ article.hentry
         - if can_update?(announcement)
             a href="/announcements/#{ announcement.id }/edit"
               i.fa.fa-pencil
-            a href="/announcements/#{ announcement.id }?_method=delete" onclick="return confirm('Are you sure?');"
+            a href="/announcements/#{ announcement.id }?_method=delete&_csrf=#{ csrf_token }" onclick="return confirm('Are you sure?');"
               i.fa.fa-trash
 
         a href="https://twitter.com/share?text=#{announcement.title}&url=#{SITE.url}#{announcement.short_path}&via=crystallang_ann&related=crystallang_ann" target="_blank" title="Retweet"

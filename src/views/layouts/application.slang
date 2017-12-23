@@ -23,12 +23,12 @@ html
 
         div.secondary
           div
-            == render_template "layouts/_nav.slang"
+            == render partial: "layouts/_nav.slang"
             - if signed_in?
-              == render_template "layouts/_profile.slang"
-            == render_template "layouts/_search.slang"
-            == render_template "layouts/_tags.slang"
-            == render_template "layouts/_social_nav.slang"
+              == render partial: "layouts/_profile.slang"
+            == render partial: "layouts/_search.slang"
+            == render partial: "layouts/_tags.slang"
+            == render partial: "layouts/_social_nav.slang"
 
       div#content.site-content
         div#primary.content-area
@@ -36,9 +36,9 @@ html
             == content
 
       footer#colophon.site-footer role="contentinfo"
-        == render_template "layouts/_footer.slang"
+        == render partial: "layouts/_footer.slang"
 
     script src="/javascripts/main.js"
     script src="/javascripts/highlight.pack.js"
 
-    == render_template "layouts/_ga.slang"
+    == render partial: "layouts/_ga.slang"

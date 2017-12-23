@@ -32,24 +32,24 @@ describe Announcement do
     end
 
     it "validates type" do
-      expect(announcement(type: -1).valid?).to be_false
+      expect(announcement(type: -1_i64).valid?).to be_false
     end
   end
 
   describe "#typename" do
     it "returns the properly capitalized type name" do
-      expect(announcement(type: 0).typename).to eq "Blog post"
-      expect(announcement(type: 1).typename).to eq "Project update"
-      expect(announcement(type: 2).typename).to eq "Conference"
-      expect(announcement(type: 3).typename).to eq "Meetup"
-      expect(announcement(type: 4).typename).to eq "Podcast"
-      expect(announcement(type: 5).typename).to eq "Screencast"
-      expect(announcement(type: 6).typename).to eq "Video"
-      expect(announcement(type: 7).typename).to eq "Other"
+      expect(announcement(type: 0_i64).typename).to eq "Blog post"
+      expect(announcement(type: 1_i64).typename).to eq "Project update"
+      expect(announcement(type: 2_i64).typename).to eq "Conference"
+      expect(announcement(type: 3_i64).typename).to eq "Meetup"
+      expect(announcement(type: 4_i64).typename).to eq "Podcast"
+      expect(announcement(type: 5_i64).typename).to eq "Screencast"
+      expect(announcement(type: 6_i64).typename).to eq "Video"
+      expect(announcement(type: 7_i64).typename).to eq "Other"
     end
 
     it "raises error if type is wrong" do
-      raise_error { announcement(type: -1).typename }
+      raise_error { announcement(type: -1_i64).typename }
     end
   end
 

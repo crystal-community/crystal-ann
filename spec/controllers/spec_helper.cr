@@ -29,7 +29,7 @@ end
 {% for method in %w(get head post put patch delete) %}
   def {{method.id}}(path, headers : HTTP::Headers? = nil, body : String? = nil)
     request = HTTP::Request.new("{{method.id}}".upcase, path, headers, body)
-    request.headers["Content-Type"] = Amber::Router::Params::URL_ENCODED_FORM
+    request.headers["Content-Type"] = Amber::Router::ParamsParser::URL_ENCODED_FORM
     Global.response = process_request request
   end
 {% end %}
@@ -49,9 +49,19 @@ def process_request(request)
 end
 
 def build_main_handler
-  amber = Amber::Server.settings
-  amber.handler.prepare_pipelines
-  amber.handler
+  handler = Amber::Pipe::Pipeline.new
+  handler.build :web do
+    plug Amber::Pipe::Error.new
+    plug Amber::Pipe::Session.new
+    plug Amber::Pipe::CSRF.new
+  end
+  handler.build :static do
+    plug Amber::Pipe::Error.new
+    plug Amber::Pipe::Static.new("./public")
+    plug HTTP::CompressHandler.new
+  end
+  handler.prepare_pipelines
+  handler
 end
 
 def response

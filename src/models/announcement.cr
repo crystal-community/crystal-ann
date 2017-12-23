@@ -4,14 +4,14 @@ require "autolink"
 
 class Announcement < Granite::ORM::Base
   TYPES = {
-    0 => "blog_post",
-    1 => "project_update",
-    2 => "conference",
-    3 => "meetup",
-    4 => "podcast",
-    5 => "screencast",
-    6 => "video",
-    7 => "other",
+    0_i64 => "blog_post",
+    1_i64 => "project_update",
+    2_i64 => "conference",
+    3_i64 => "meetup",
+    4_i64 => "podcast",
+    5_i64 => "screencast",
+    6_i64 => "video",
+    7_i64 => "other",
   }
 
   adapter pg

@@ -37,9 +37,9 @@ describe AnnouncementController do
 
     context "with type param" do
       it "can find announcements by type" do
-        a1 = announcement(user, type: 0).tap &.save
-        a2 = announcement(user, type: 0).tap &.save
-        a3 = announcement(user, type: 1).tap &.save
+        a1 = announcement(user, type: 0_i64).tap &.save
+        a2 = announcement(user, type: 0_i64).tap &.save
+        a3 = announcement(user, type: 1_i64).tap &.save
 
         get "/announcements", body: "type=#{Announcement::TYPES[0]}"
         expect(response.body.includes? a1.title.to_s).to be_true

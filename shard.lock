@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.2.6
+    version: 0.3.7
 
   autolink:
     github: crystal-community/autolink.cr
@@ -10,47 +10,43 @@ shards:
 
   baked_file_system:
     github: schovi/baked_file_system
-    version: 0.9.4
+    version: 0.9.5
 
   callback:
     github: mosop/callback
-    version: 0.5.1
+    version: 0.6.3
 
   cli:
     github: mosop/cli
-    version: 0.5.2
+    version: 0.6.10
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.4.2
+    version: 0.4.3
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.7.2
+    version: 0.7.8
 
   hashids:
     github: splattael/hashids.cr
     version: 0.2.1
 
-  icr:
-    github: TechMagister/crystal-icr
-    commit: b28bb938cc9e9e439424217c074a9168d253ba4b
-
   kemal:
     github: kemalcr/kemal
-    version: 0.19.0
+    version: 0.21.0
 
   kemal-csrf:
     github: kemalcr/kemal-csrf
-    version: 0.2.0
+    version: 0.3.0
 
   kemal-session:
     github: kemalcr/kemal-session
-    commit: ec08bfe302d6ddbd1b33c5283d56a8b496cdb276
+    version: 0.8.0
 
   kilt:
     github: jeromegn/kilt
-    version: 0.3.3
+    version: 0.4.0
 
   micrate:
     github: juanedi/micrate
@@ -62,15 +58,15 @@ shards:
 
   mysql:
     github: crystal-lang/crystal-mysql
-    version: 0.3.2
+    version: 0.3.3
 
   optarg:
     github: mosop/optarg
-    version: 0.4.4
+    version: 0.5.8
 
   pg:
     github: will/crystal-pg
-    version: 0.13.3
+    version: 0.13.4
 
   pool:
     github: ysbaddaden/pool
@@ -82,35 +78,35 @@ shards:
 
   redis:
     github: stefanwille/crystal-redis
-    version: 1.8.0
+    version: 1.9.0
 
   sentry:
-    github: TechMagister/sentry
-    commit: a78129ec1e66aa24c91b93199ea187e4793c8d58
+    github: samueleaton/sentry
+    version: 0.1.1
 
   shell-table:
     github: jwaldrip/shell-table.cr
-    version: 0.9.1
+    version: 0.9.2
 
   sidekiq:
     github: mperham/sidekiq.cr
-    commit: d91d68f8064ea83d252a4002cf492f65516c7a70
+    commit: 3a15baf85049772db6d67e12821c6993ad9d04ec
 
   slang:
     github: jeromegn/slang
-    commit: b817c89c7e5ae39562710c0d6c7f42cee685e14f
+    version: 1.7.0
 
   spec2:
     github: waterlink/spec2.cr
     version: 0.11.0
 
   spinner:
-    github: elorest/spinner
+    github: askn/spinner
     version: 0.1.1
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: 0.8.2
+    version: 0.8.3
 
   string_inflection:
     github: mosop/string_inflection
@@ -126,5 +122,5 @@ shards:
 
   webmock:
     github: manastech/webmock.cr
-    commit: c673f393a31eac2734c7599897357ef1f3f24011
+    commit: 7e7e7ff4d00afbb708909e1721e9f9bceddda726
 

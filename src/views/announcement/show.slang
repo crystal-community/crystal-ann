@@ -1,6 +1,6 @@
 - page_title announcement.title
 
-== render "_entry.slang"
+== render partial: "_entry.slang"
 
 nav.navigation.post-navigation role="navigation"
   div.nav-links

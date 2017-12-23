@@ -9,7 +9,6 @@ Amber::Server.configure do |app|
   app.name = "Crystal [ANN] web application."
   app.port = AMBER_PORT.to_i
   app.host = "0.0.0.0"
-  app.env = AMBER_ENV.to_s
   app.log = ::Logger.new(STDOUT)
   app.log.level = ::Logger::INFO
 end
