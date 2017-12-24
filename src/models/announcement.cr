@@ -22,6 +22,8 @@ class Announcement < Granite::ORM::Base
   field description : String
   timestamps
 
+  belongs_to :user
+
   validate :title, "is too short",
     ->(this : Announcement) { this.title.to_s.size >= 5 }
 
@@ -68,18 +70,22 @@ class Announcement < Granite::ORM::Base
     TYPES[type].split("_").join(" ").capitalize
   end
 
+  def self.find_by_hashid(hashid)
+    if id = (HASHIDS.decode hashid).first?
+      Announcement.find id
+    end
+  end
+
+  def self.random
+    Announcement.all("ORDER BY RANDOM() LIMIT 1").first?
+  end
+
   def next
     Announcement.all("WHERE created_at > $1 ORDER BY created_at LIMIT 1", created_at).first?
   end
 
   def prev
     Announcement.all("WHERE created_at < $1 ORDER BY created_at DESC LIMIT 1", created_at).first?
-  end
-
-  def self.find_by_hashid(hashid)
-    if id = (HASHIDS.decode hashid).first?
-      Announcement.find id
-    end
   end
 
   def hashid
@@ -94,15 +100,7 @@ class Announcement < Granite::ORM::Base
     Announcement.typename(type)
   end
 
-  def user
-    User.find(user_id)
-  end
-
   def content
     Autolink.auto_link(Markdown.to_html(description.not_nil!))
-  end
-
-  def self.random
-    Announcement.all("ORDER BY RANDOM() LIMIT 1").first?
   end
 end
