@@ -22,7 +22,7 @@ class Global
   end
 
   def self.session
-    @@session ||= Amber::Router::Session::Store.new(cookies).build
+    @@session ||= Amber::Router::Session::Store.new(cookies, Amber.settings.session).build
   end
 end
 

@@ -2,7 +2,11 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.3.7
+    version: 0.6.0
+
+  ameba:
+    github: veelenga/ameba
+    version: 0.4.0
 
   autolink:
     github: crystal-community/autolink.cr
@@ -17,16 +21,16 @@ shards:
     version: 0.6.3
 
   cli:
-    github: mosop/cli
-    version: 0.6.10
+    github: amberframework/cli
+    version: 0.7.0
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.4.3
+    version: 0.5.0
 
   granite_orm:
     github: kemalyst/granite-orm
-    version: 0.7.8
+    version: 0.8.0
 
   hashids:
     github: splattael/hashids.cr
@@ -58,7 +62,7 @@ shards:
 
   mysql:
     github: crystal-lang/crystal-mysql
-    version: 0.3.3
+    version: 0.4.0
 
   optarg:
     github: mosop/optarg
@@ -66,7 +70,7 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.13.4
+    version: 0.14.1
 
   pool:
     github: ysbaddaden/pool
@@ -94,7 +98,7 @@ shards:
 
   slang:
     github: jeromegn/slang
-    version: 1.7.0
+    commit: 33d5c2c2075460094784904e7ecdd3cd21c8d36e
 
   spec2:
     github: waterlink/spec2.cr
@@ -106,19 +110,19 @@ shards:
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    version: 0.8.3
+    version: 0.9.0
 
   string_inflection:
     github: mosop/string_inflection
     version: 0.2.1
 
   teeplate:
-    github: mosop/teeplate
-    version: 0.4.5
+    github: amberframework/teeplate
+    version: 0.5.0
 
   twitter-crystal:
     github: sferik/twitter-crystal
-    version: 0.2.0
+    version: 0.2.1
 
   webmock:
     github: manastech/webmock.cr
