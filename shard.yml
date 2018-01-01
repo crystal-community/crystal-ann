@@ -35,6 +35,7 @@ dependencies:
 
   hashids:
     github: splattael/hashids.cr
+    version: 0.2.2
 
   autolink:
     github: crystal-community/autolink.cr
