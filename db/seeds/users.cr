@@ -2,7 +2,7 @@ module Seeds::Users
   extend self
 
   def user(**params)
-    User.create(params.to_h)
+    User.new(params.to_h).tap &.save
   end
 
   def create_records

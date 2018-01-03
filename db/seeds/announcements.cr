@@ -12,8 +12,8 @@ module Seeds::Announcements
       .find { |k, v| v == typename }
       .try(&.first) || 0
 
-    attributes = {:type => type, :user_id => user_id} of Symbol => Int32 | Int64 | String
-    Announcement.create(attributes.merge!(params.to_h)).tap do |a|
+    attributes = {:type => type.to_s, :user_id => user_id.to_s} of String | Symbol => String | JSON::Type
+    Announcement.new(attributes.merge!(params.to_h)).tap do |a|
       a.created_at = rand(15).days.ago - rand(60).minutes
       a.save
     end

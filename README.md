@@ -25,25 +25,25 @@ Source code for https://crystal-ann.com.
 1. Install project dependencies:
 
 ```
-$ crystal deps
+$ shards install
 ```
 
 2. Run database migrations:
 
 ```
-$ amber migrate up
+$ amber db migrate
 ```
 
-3. Create seed data:
+3. Seed data:
 
 ```
-$ crystal db/seed.cr
+$ amber db seed
 ```
 
 4. Start app and watch for source changes:
 
 ```
-$ amber watch
+$ amber w
 ```
 
 ## Testing
