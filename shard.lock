@@ -38,15 +38,15 @@ shards:
 
   kemal:
     github: kemalcr/kemal
-    version: 0.21.0
+    version: 0.22.0
 
   kemal-csrf:
     github: kemalcr/kemal-csrf
-    version: 0.3.0
+    version: 0.4.0
 
   kemal-session:
     github: kemalcr/kemal-session
-    version: 0.8.0
+    version: 0.9.0
 
   kilt:
     github: jeromegn/kilt
@@ -94,7 +94,7 @@ shards:
 
   sidekiq:
     github: mperham/sidekiq.cr
-    commit: 3a15baf85049772db6d67e12821c6993ad9d04ec
+    commit: 1f2d31e20fa1ced7f54ed0ebe31cbbcfc9469547
 
   slang:
     github: jeromegn/slang
