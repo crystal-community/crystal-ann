@@ -27,7 +27,7 @@ dependencies:
 
   amber:
     github: amberframework/amber
-    version: 0.6.0
+    version: 0.6.1
 
   twitter-crystal:
     github: sferik/twitter-crystal
