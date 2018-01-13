@@ -106,7 +106,8 @@ describe AnnouncementController do
       end
 
       it "does not create an announcement if csrf token is invalid" do
-        post "/announcements", body: "title=test-title&description=test-description&type=0&_csrf=invalid-token"
+        token = Base64.encode "invalid-token"
+        post "/announcements", body: "title=test-title&description=test-description&type=0&_csrf=#{token}"
         expect(response.status_code).to eq 403
         expect(Announcement.all.size).to eq 0
       end
@@ -241,7 +242,8 @@ describe AnnouncementController do
         end
 
         it "does not update announcement if csrf token is invalid" do
-          patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params) + "&_csrf=invalid-token"
+          token = Base64.encode "invalid-token"
+          patch "/announcements/#{announcement.id}", body: HTTP::Params.encode(valid_params) + "&_csrf=#{token}"
           expect(response.status_code).to eq 403
           a = Announcement.find(announcement.try &.id).not_nil!
           expect(a.title).to eq announcement.title
@@ -318,7 +320,8 @@ describe AnnouncementController do
         end
 
         it "does not delete announcement if csrf token is invalid" do
-          delete "/announcements/#{announcement.id}", body: "_csrf=invalid-token"
+          token = Base64.encode "invalid-token"
+          delete "/announcements/#{announcement.id}", body: "_csrf=#{token}"
           expect(response.status_code).to eq 403
           expect(Announcement.find announcement.id).not_to be_nil
         end

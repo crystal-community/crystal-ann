@@ -11,7 +11,8 @@ describe SessionController do
     end
 
     it "does not sign out user if csrf is invalid" do
-      delete "/sessions", body: "_csrf=invalid-token"
+      token = Base64.encode "invalid-token"
+      delete "/sessions", body: "_csrf=#{token}"
       expect(response.status_code).to eq 403
       expect(session["user_id"]).not_to be_nil
     end

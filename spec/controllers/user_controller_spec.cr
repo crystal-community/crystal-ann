@@ -48,7 +48,8 @@ describe UserController do
 
     it "does not remove handle if csrf token is invalid" do
       login_as user
-      put "/users/remove_handle", body: "_csrf=invalid-token"
+      token = Base64.encode "invalid-token"
+      put "/users/remove_handle", body: "_csrf=#{token}"
       expect(response.status_code).to eq 403
       expect(User.find(user.id).try &.handle).not_to be_nil
     end
