@@ -8,4 +8,5 @@ require "./support/*"
 
 include Spec2::GlobalDSL
 
+Granite::ORM.settings.logger = ::Logger.new(nil)
 Sidekiq::Client.default_context.logger.level = ::Logger::UNKNOWN

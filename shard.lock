@@ -2,7 +2,7 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.6.3
+    version: 0.6.4
 
   ameba:
     github: veelenga/ameba
@@ -29,8 +29,8 @@ shards:
     version: 0.5.0
 
   granite_orm:
-    github: kemalyst/granite-orm
-    version: 0.8.0
+    github: amberframework/granite-orm
+    version: 0.8.2
 
   hashids:
     github: splattael/hashids.cr
