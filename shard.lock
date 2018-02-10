@@ -2,11 +2,11 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.6.4
+    version: 0.6.7
 
   ameba:
     github: veelenga/ameba
-    version: 0.4.0
+    version: 0.5.0
 
   autolink:
     github: crystal-community/autolink.cr
@@ -30,7 +30,7 @@ shards:
 
   granite_orm:
     github: amberframework/granite-orm
-    version: 0.8.2
+    version: 0.8.4
 
   hashids:
     github: splattael/hashids.cr
@@ -90,11 +90,11 @@ shards:
 
   sidekiq:
     github: mperham/sidekiq.cr
-    commit: 1f2d31e20fa1ced7f54ed0ebe31cbbcfc9469547
+    commit: 26253ed561094e715f27f3d4e4c9679876d26aee
 
   slang:
     github: jeromegn/slang
-    commit: 777e2fc3e63daf5cfe9bd4475257905903b78542
+    version: 1.7.1
 
   spec2:
     github: waterlink/spec2.cr

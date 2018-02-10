@@ -12,7 +12,7 @@ license: MIT
 dependencies:
   granite_orm:
     github: amberframework/granite-orm
-    version: 0.8.2
+    version: 0.8.4
 
   multi_auth:
     github: msa7/multi_auth
@@ -27,7 +27,7 @@ dependencies:
 
   amber:
     github: amberframework/amber
-    version: 0.6.4
+    version: 0.6.7
 
   twitter-crystal:
     github: sferik/twitter-crystal

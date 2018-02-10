@@ -1,9 +1,9 @@
 - if announcement.errors
   ul.errors
     - announcement.errors.each do |error|
-      li = error
+      li = error.to_s
 
-- action = (announcement.id ? "/announcements/#{ announcement.id.to_s }" : "/announcements")
+- action = (announcement.id ? "/announcements/#{ announcement.id }" : "/announcements")
 
 form action="#{ action }" method="post"
   == csrf_tag
