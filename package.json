@@ -1,0 +1,11 @@
+{
+  "name": "crystal-ann",
+  "version": "1.0.0",
+  "repository": "https://github.com/crystal-community/crystal-ann",
+  "author": "V. Elenhaupt <velenhaupt@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch": "echo"
+  }
+}
