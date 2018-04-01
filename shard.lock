@@ -2,7 +2,11 @@ version: 1.0
 shards:
   amber:
     github: amberframework/amber
-    version: 0.6.7
+    version: 0.7.2
+
+  amber_router:
+    github: amberframework/router
+    version: 0.0.3
 
   ameba:
     github: veelenga/ameba
@@ -24,17 +28,29 @@ shards:
     github: amberframework/cli
     version: 0.7.0
 
+  compiled_license:
+    github: elorest/compiled_license
+    version: 0.1.2
+
+  cry:
+    github: elorest/cry
+    version: 0.3.0
+
   db:
     github: crystal-lang/crystal-db
     version: 0.5.0
 
   granite_orm:
     github: amberframework/granite-orm
-    version: 0.8.4
+    version: 0.9.1
 
   hashids:
     github: splattael/hashids.cr
     version: 0.2.2
+
+  inflector:
+    github: phoffer/inflector.cr
+    version: 0.1.8
 
   kemal:
     github: kemalcr/kemal
@@ -90,7 +106,7 @@ shards:
 
   sidekiq:
     github: mperham/sidekiq.cr
-    commit: 26253ed561094e715f27f3d4e4c9679876d26aee
+    commit: 7f555b19d8e69faa82de8cdb5fcd12aba8f8d308
 
   slang:
     github: jeromegn/slang
@@ -99,10 +115,6 @@ shards:
   spec2:
     github: waterlink/spec2.cr
     version: 0.11.0
-
-  spinner:
-    github: askn/spinner
-    version: 0.1.1
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3

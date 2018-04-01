@@ -96,7 +96,7 @@ class AnnouncementController < ApplicationController
   end
 
   private def announcement_params
-    params.to_h.select %w(title description type)
+    params.raw_params.to_h.select %w(title description type)
   end
 
   private def find_announcement
@@ -108,7 +108,7 @@ class AnnouncementController < ApplicationController
   end
 
   private def page_param
-    [params.fetch("page", "1").to_i { 1 }, 1].max
+    [(params["page"]? || "1").to_i { 1 }, 1].max
   end
 
   private def type_param

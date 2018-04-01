@@ -40,7 +40,7 @@ describe OAuthController do
       body = "client_id=#{github_id}&client_secret=#{github_secret}&redirect_uri=&grant_type=authorization_code&code=#{code}"
       headers = {"Accept" => "application/json", "Content-type" => "application/x-www-form-urlencoded"}
 
-      WebMock.stub(:post, "https://github.com/login/oauth/access_token")
+      WebMock.stub(:any, "https://github.com/login/oauth/access_token")
              .with(body: body, headers: headers)
              .to_return(body: github_access_token_response.to_json)
 

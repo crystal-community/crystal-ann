@@ -21,7 +21,7 @@ class OAuthController < ApplicationController
   end
 
   private def sign_in_user(provider)
-    u = oauth(provider).provider.user(params.to_h)
+    u = oauth(provider).provider.user(oauth_params)
 
     user = User.find_by_uid_and_provider(u.uid, provider) || User.new
     user.set_attributes(
@@ -38,7 +38,7 @@ class OAuthController < ApplicationController
   private def save_user_handle(provider)
     user = current_user!
 
-    u = oauth(provider).provider.user(params.to_h)
+    u = oauth(provider).provider.user(oauth_params)
     user.handle = u.nickname
     user.save
   end
@@ -49,5 +49,9 @@ class OAuthController < ApplicationController
 
   private def oauth(provider)
     MultiAuth.make provider, "#{SITE.url}/oauth/#{provider}"
+  end
+
+  private def oauth_params
+    params.raw_params.to_h
   end
 end
