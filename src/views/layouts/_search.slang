@@ -4,7 +4,7 @@
 
 aside.widget.search
   form name="search" action="/"
-    input.search-input name="query" type="text" placeholder="Search..." value="#{query}"
+    input.search-input id="search-input" name="query" type="text" placeholder="Search..." value="#{query}"
     - if user
       input type="hidden" name="user" value="#{user}"
     - if type
