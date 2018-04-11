@@ -40,5 +40,6 @@ html
 
     script src="/javascripts/main.js"
     script src="/javascripts/highlight.pack.js"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
 
     == render partial: "layouts/_ga.slang"

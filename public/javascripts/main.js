@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   toggleSecondary();
   signoutListener();
   runPrettify();
+  runHighlighter();
 });
 
 function toggleSecondary() {
@@ -43,4 +44,12 @@ function signoutListener() {
 
 function runPrettify() {
   hljs.initHighlightingOnLoad();
+}
+
+function runHighlighter() {
+  var search = document.getElementById("search-input");
+  if (search) {
+    var context = document.querySelectorAll(".entry-header, .entry-content");
+    new Mark(context).mark(search.value);
+  }
 }
