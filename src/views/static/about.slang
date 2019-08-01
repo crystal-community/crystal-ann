@@ -9,7 +9,7 @@ div.page-content
 
   ul
     li
-      | a new project or it's release
+      | a new project or its release
     li
       | a blog post
     li
