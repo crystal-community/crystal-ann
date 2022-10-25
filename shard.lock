@@ -54,11 +54,11 @@ shards:
 
   micrate:
     github: juanedi/micrate
-    version: 0.3.0
+    version: 0.3.3
 
   multi_auth:
     github: msa7/multi_auth
-    version: 1.0.0
+    commit: 4b8a34be7b6ee65e1efe42f352465f6f27323092
 
   mysql:
     github: crystal-lang/crystal-mysql

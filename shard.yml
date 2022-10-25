@@ -16,14 +16,15 @@ dependencies:
 
   multi_auth:
     github: msa7/multi_auth
-    version: 1.0.0
+    commit: 4b8a34be7b6ee65e1efe42f352465f6f27323092
 
   micrate:
     github: juanedi/micrate
+    version: 0.3.3
 
   sidekiq:
     github: mperham/sidekiq.cr
-    branch: master
+    commit: 26253ed561094e715f27f3d4e4c9679876d26aee
 
   amber:
     github: amberframework/amber
@@ -44,10 +45,12 @@ dependencies:
 development_dependencies:
   spec2:
     github: waterlink/spec2.cr
+    version: 0.11.0
 
   webmock:
     github: manastech/webmock.cr
-    branch: master
+    commit: 7e7e7ff4d00afbb708909e1721e9f9bceddda726
 
   ameba:
     github: veelenga/ameba
+    version: 0.5.0

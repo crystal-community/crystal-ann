@@ -53,6 +53,14 @@ Migrate test database and run specs:
 $ MICRATE_RUN_UP=true crystal spec
 ```
 
+## Docker
+
+Run the app using docker-compose
+
+``` sh
+docker-compose up
+```
+
 ## Deployment to Heroku
 
 ```
