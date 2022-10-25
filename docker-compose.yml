@@ -5,7 +5,6 @@ services:
     build:
       context: .
     environment:
-      - DOCKER_DEFAULT_PLATFORM=linux/amd64
       - AMBER_ENV=production
       - AMBER_SESSION_SECRET=
 
