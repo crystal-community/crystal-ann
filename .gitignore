@@ -7,4 +7,4 @@
 .env
 crystal-ann
 
-
+.DS_Store
