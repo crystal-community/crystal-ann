@@ -1,39 +1,12 @@
 version: '3.9'
-
 services:
-  app:
-    build:
-      context: .
-    environment:
-      - AMBER_ENV=production
-      - AMBER_SESSION_SECRET=
-
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/crystal_ann
-      - MICRATE_RUN_UP=true
-
-      - GITHUB_ID=
-      - GITHUB_SECRET=
-
-      - TWITTER_CONSUMER_KEY=
-      - TWITTER_CONSUMER_SECRET=
-      - TWITTER_ACCESS_TOKEN=
-      - TWITTER_ACCESS_TOKEN_SECRET=
-      - TWITTER_OAUTH_CONSUMER_KEY=
-      - TWITTER_OAUTH_CONSUMER_SECRET=
-
-    depends_on:
-      - db
-    links:
-      - db
-    ports:
-      - 3000:3008
-
+###
   db:
     image: postgres:13.8-alpine
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=crystal_ann
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: crystal_ann
     volumes:
       - crystal_ann-db:/var/lib/postgres/data
     healthcheck:
@@ -41,6 +14,34 @@ services:
       interval: 30s
       timeout: 10s
       start_period: 30s
-
+###
+  app:
+    build:
+      context: .
+    environment:
+      AMBER_ENV: production
+      AMBER_SESSION_SECRET: 
+      DATABASE_URL: postgres://postgres:postgres@db:5432/crystal_ann
+      MICRATE_RUN_UP: true
+      GITHUB_ID: 
+      GITHUB_SECRET: 
+      HASHIDS_SALT: crystal-rocks
+      MICRATE_RUN_UP: true
+      # REDIS_PROVIDER: REDIS_URL
+      # # REDIS_TLS_URL:
+      # REDIS_URL: redis://:redis:6379
+      TWITTER_ACCESS_TOKEN: 
+      TWITTER_ACCESS_TOKEN_SECRET: 
+      TWITTER_CONSUMER_KEY: 
+      TWITTER_CONSUMER_SECRET: 
+      TWITTER_OAUTH_CONSUMER_KEY: 
+      TWITTER_OAUTH_CONSUMER_SECRET: 
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 3000:3008
+###
 volumes:
   crystal_ann-db:
