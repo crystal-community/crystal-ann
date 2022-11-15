@@ -8,14 +8,14 @@
 Source code for https://crystal-ann.com.
 
 <p>
-  <img src="https://gitcdn.link/repo/veelenga/bin/master/crystal-ann/ipad_mockup.png" width="600" />
-  <img src="https://gitcdn.link/repo/veelenga/bin/master/crystal-ann/iphone_mockup.png" width="200" />
+  <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/ipad_mockup.png" width="600" />
+  <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/iphone_mockup.png" width="200" />
 </p>
 
 ## Setup
 
 1. [Install Crystal](https://crystal-lang.org/docs/installation/index.html)
-2. [Install Amber Framework](https://docs.amberframework.org/getting-started/Installation/)
+2. [Install Amber Framework](https://docs.amberframework.org/amber/getting-started)
 3. [Install Postgres](http://postgresguide.com/setup/install.html)
 4. Create `crystal_ann` and `crystal_ann_test` pg databases
 
