@@ -1,8 +1,6 @@
 # Crystal [ANN]
-[![Build Status](https://travis-ci.org/crystal-community/crystal-ann.svg?branch=master)](https://travis-ci.org/crystal-community/crystal-ann)
 [![GitHub release](https://img.shields.io/github/release/crystal-community/crystal-ann.svg)](https://github.com/crystal-community/crystal-ann)
 [![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](http://www.amberframework.org/)
-[![Gitter](https://badges.gitter.im/veelenga/crystal-ann.svg)](https://gitter.im/veelenga/crystal-ann?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Twitter Follow](https://img.shields.io/twitter/follow/crystallang_ann.svg?style=social&label=Follow)](https://twitter.com/crystallang_ann)
 
 Source code for https://crystal-ann.com.
@@ -11,6 +9,17 @@ Source code for https://crystal-ann.com.
   <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/ipad_mockup.png" width="600" />
   <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/iphone_mockup.png" width="200" />
 </p>
+
+## Notice
+
+**Crystal [ANN] is no longer maintained. Website was taken down as of March 2025**.
+
+The announcement data has been exported and preserved in the `db/data` folder:
+
+- `announcements.json.gz`: JSON format of all announcements
+- `announcements.sql.gz`: SQL dump of the announcements table
+
+This repository remains available for historical reference and educational purposes.
 
 ## Setup
 
