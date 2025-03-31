@@ -3,8 +3,6 @@
 [![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)](http://www.amberframework.org/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/crystallang_ann.svg?style=social&label=Follow)](https://twitter.com/crystallang_ann)
 
-Source code for https://crystal-ann.com.
-
 <p>
   <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/ipad_mockup.png" width="600" />
   <img src="https://github.com/veelenga/bin/raw/master/crystal-ann/iphone_mockup.png" width="200" />
